@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{ viewTitle }}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+
+<ng-template #template let-view="view" let-row="row" let-col="col">   
+    <div *ngIf="view.dates[row*7+col].events[0]" class="calendar-state-{{view.dates[row*7+col].events[0].state}}"  [ngClass]="{'calendar-manual': view.dates[row*7+col].events[0].manual, 'calendar-reprogram': view.dates[row*7+col].events[0].reprogram}" >
+      <span>{{view.dates[row*7+col].label}}</span>
+    </div>
+     
+    <div *ngIf="!view.dates[row*7+col].events[0]">
+        <span>{{view.dates[row*7+col].label}}</span>
+    </div>
+</ng-template>
+<calendar [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        [markDisabled]="markDisabled"
+        [monthviewDisplayEventTemplate]="template"
+        autoSelect=false
+        step="30"
+        class="calendar">
+      </calendar>
+</ion-content>

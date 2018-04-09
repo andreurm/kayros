@@ -1,0 +1,54 @@
+page-calendar {
+    .event-detail-container{
+        display: none;
+    }
+
+    td[_ngcontent-c1] div{
+        border-radius: 15px;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        font-size: 12px;
+        border:3px solid #fff;
+        font-weight: bold;
+    }
+    td[_ngcontent-c1] div span{
+        padding-top: 2px;
+        display: block;
+    }
+
+    td[_ngcontent-c1] div.calendar-state-0{
+        background-color: $notification-missed-color;
+        color: #fff !important;
+    }
+    td[_ngcontent-c1] div.calendar-state-1{
+        background-color: $notification-worst-color;
+        color: #fff !important;
+    }
+    td[_ngcontent-c1] div.calendar-state-2{
+        background-color: $notification-better-color;
+        color: #fff !important;
+    }
+    td[_ngcontent-c1] div.calendar-state-3{
+        background-color: $notification-same-color;
+        color: #fff !important;
+    }
+
+    td[_ngcontent-c1] div.calendar-manual{
+        border:3px solid #000;
+    }
+
+    td[_ngcontent-c1] div.calendar-reprogram{
+        border:3px solid #fff;
+        border-style: dotted;
+    }
+
+    .monthview-primary-with-event, .monthview-selected{
+        background-color: transparent !important;
+    }
+
+    .monthview-selected[_ngcontent-c1] {
+        background-color: transparent ;
+        color: #000;
+    }
+}
