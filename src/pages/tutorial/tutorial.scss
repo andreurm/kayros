@@ -72,4 +72,9 @@ page-tutorial {
     }
   }
 
+  .swiper-pagination-bullet-active {
+    background: color($colors, primary);
+    opacity: 1;
+}
+
 }
