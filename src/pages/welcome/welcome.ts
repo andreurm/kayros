@@ -20,7 +20,7 @@ export class WelcomePage {
     this.navCtrl.push('LoginPage');
   }
 
-  signup() {
+  forgot() {
     this.navCtrl.push('SignupPage');
   }
 }

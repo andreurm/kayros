@@ -22,16 +22,18 @@ page-welcome {
   }
   .splash-logo {
     margin: auto;
-    background: url('../assets/img/appicon.png') repeat transparent;
+    background: url('../assets/img/imago-bkg.png') repeat transparent;
     background-size: 100%;
     width: 128px;
     height: 128px;
   }
   .splash-intro {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     max-width: 80%;
-    margin: auto;
+    margin: 10px auto;
+    font-family: 'JosefinSans';
+    color: color($colors, primary);
   }
   button.login {
     margin-top: 25px;
