@@ -1,7 +1,40 @@
 page-tutorial {
+  .logo{
+    margin: 6px;
+  }
+
+  ion-navbar{
+    height: 60px;
+    border: none;
+    border-color: transparent !important;
+    border-style: none;
+  }
+
+  .scroll-content, ion-header{
+    background-color: #eee;
+  }
+  
+  .bar-button-primary-ios, .bar-button-default.bar-button-ios-primary, .bar-button-clear-ios-primary{
+    color:#000;
+  }
+
   .toolbar-background {
+    border-style: none !important;
     background: transparent;
-    border-color: transparent;
+    border-color: transparent !important;
+    border:none !important;
+  }
+
+  ion-slide{
+    text-align: center;
+  }
+  
+  .card-slide{
+    width: 90%;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 40px auto 0;
+    box-shadow: 6px 6px 20px #333;
   }
 
   .slide-zoom {
@@ -13,9 +46,14 @@ page-tutorial {
   }
 
   .slide-image {
-    max-height: 40%;
-    max-width: 60%;
-    margin: 36px 0;
+    max-width: 100%;
+    margin: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .slide-last-image{
+    width: 80%;
+    margin: 80px 0 20px;
   }
 
   b {
@@ -23,8 +61,9 @@ page-tutorial {
   }
 
   p {
-    padding: 0 40px;
-    font-size: 14px;
+    padding: 20px 40px 20px;
+    margin: 0px;
+    font-size: 17px;
     line-height: 1.5;
     color: #60646B;
 

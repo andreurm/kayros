@@ -14,3 +14,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: 'JosefinSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../assets/fonts/JosefinSans-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'JosefinSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../assets/fonts/JosefinSans-Bold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Playfair';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype')
+}

@@ -25,7 +25,7 @@ $background-color:  #fff;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #f4f4f4,
+  primary:    #4a6673,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -36,6 +36,10 @@ $notification-missed-color: #666;
 $notification-worst-color: #a52222;
 $notification-better-color: #188037;
 $notification-same-color: #e09808;
+
+$font-family-md-base: "Arial";
+$font-family-ios-base: "Arial";
+$font-family-wp-base: "Arial";
 
 
 // App iOS Variables
