@@ -1,0 +1,21 @@
+<ion-content>
+  <img src="assets/img/logo.png" class="big-logo" />
+  <form (submit)="doForgot()">
+    <ion-list inset>
+
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-label floating>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block>{{ 'SEND' | translate }}</button>           
+      </div>
+
+    </ion-list>
+  </form>
+  <div padding text-center class="forgot-pass">
+    <button ion-button clear color="primary" (click)="backToLogin()">{{ 'BACK_LOGIN' | translate }}</button>     
+  </div>
+</ion-content>

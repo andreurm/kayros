@@ -8,6 +8,8 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
   "FORGOT": "forgot password?",
+  "SEND": "Send",
+  "BACK_LOGIN": "back to Log In",
 
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Search",
@@ -46,6 +48,8 @@
   "SIGNUP_TITLE": "Sign up",
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
+  "FORGOT_ERROR": "The email doesn't match any user",
+  "FORGOT_SUCCESS": "We have sent an email with password reset instructions to your address",
 
   "LIST_MASTER_TITLE": "Items",
 

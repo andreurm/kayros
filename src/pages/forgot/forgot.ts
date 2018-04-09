@@ -7,44 +7,55 @@ import { MainPage } from '../pages';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-forgot',
+  templateUrl: 'forgot.html'
 })
-export class LoginPage {
+export class ForgotPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
+  account: { email: string} = {
+    email: ''
   };
 
   // Our translated text strings
-  private loginErrorString: string;
+  private forgotErrorString: string;
+  private forgotSuccessString: string;
 
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
 
-    this.translateService.get('LOGIN_ERROR').subscribe((value) => {
-      this.loginErrorString = value;
+    this.translateService.get(["FORGOT_ERROR",
+    "FORGOT_SUCCESS"]).subscribe((values) => {
+      this.forgotErrorString = values.FORGOT_ERROR;
+      this.forgotSuccessString = values.FORGOT_SUCCESS;
     })
   }
 
   // Attempt to login in through our User service
-  doLogin() {
-    this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
-    }, (err) => {
-      this.navCtrl.push(MainPage);
-      // Unable to log in
+  doForgot() {
+    this.user.forgot(this.account).subscribe((resp) => {
+      this.navCtrl.pop();
       let toast = this.toastCtrl.create({
-        message: this.loginErrorString,
+        message: this.forgotSuccessString,
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    }, (err) => {     
+      // Unable to forgot
+      let toast = this.toastCtrl.create({
+        message: this.forgotErrorString,
         duration: 3000,
         position: 'top'
       });
       toast.present();
     });
+  }
+
+  backToLogin(){
+    this.navCtrl.pop();
   }
 }

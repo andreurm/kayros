@@ -15,8 +15,8 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
+    email: '',
+    password: ''
   };
 
   // Our translated text strings
@@ -45,6 +45,14 @@ export class LoginPage {
         position: 'top'
       });
       toast.present();
+    });
+  }
+
+
+  forgot() {
+    this.navCtrl.push('ForgotPage', {}, {
+      animate: true,
+      direction: 'forward'
     });
   }
 }

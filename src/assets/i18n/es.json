@@ -5,6 +5,8 @@
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
   "FORGOT": "¿No recuerdas la contraseña?",
+  "SEND": "Enviar",
+  "BACK_LOGIN": "Volver",
 
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Buscar",
@@ -34,6 +36,8 @@
   "SIGNUP_TITLE": "Registro",
   "SIGNUP_ERROR": "No se ha podido crear la cuenta. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
   "SIGNUP_BUTTON": "Registrarse",
+  "FORGOT_ERROR": "El email indicado no corresponde a ningún usuario",
+  "FORGOT_SUCCESS": "Hemos enviado un email con instrucciones a la dirección indicada",
 
   "LIST_MASTER_TITLE": "Items",
 
