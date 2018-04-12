@@ -64,9 +64,23 @@
   "COMMENTS": "Comentarios",
   "TYPE_MESSAGE": "Escribe aquí tu mensaje",
   "SELECT_FELT": "Selecciona cómo te has sentido",
-  "WORSE": "Peor",
-  "BAD": "Mal",
-  "SAME": "Igual",
-  "WELL": "Bien",
-  "BETTER": "Mejor"
+  "STATE_WORSE": "Peor",
+  "STATE_BAD": "Mal",
+  "STATE_SAME": "Igual",
+  "STATE_WELL": "Bien",
+  "STATE_BETTER": "Mejor",
+  "CONTINUE": "Continuar",
+  "SELECT": "Seleccionar",
+  "DO_SESSION_ERROR": "No ha sido posible hacer la sesión",
+
+  "INSTRUCTIONS_SLIDE1_DESCRIPTION": "Aplica el dispositivo káyros en la parte DERECHA de tu cuello.",
+  "INSTRUCTIONS_SLIDE2_DESCRIPTION": "Aplica el dispositivo káyros en la parte IZQUIERDA de tu cuello.",
+  "INSTRUCTIONS_SLIDE3_DESCRIPTION": "Recuerda que debes descansar y evitar las actividades no recomendadas.",
+  "DONE": "Continuar",
+
+  "ADD_SESSIONS": "Añadir sesiones",
+  "ADD_ONE_SESSION": "Añadir una sesión",
+  "ADD_SEVERAL_SESSIONS": "Añadir varias sesiones",
+  "ADD_SESSION_ERROR": "No ha sido posible añadir la sesión",
+  "ADD_SESSIONS_ERROR": "No ha sido posible añadir las sesiones"
 }

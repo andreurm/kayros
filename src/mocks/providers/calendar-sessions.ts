@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 
+import { Api } from '../../providers/api/api';
+
 import { 
   CalendarSession, 
   CALENDAR_SESSION_STATE_MISSED,
   CALENDAR_SESSION_STATE_BETTER, 
-  CALENDAR_SESSION_STATE_WORST, 
+  CALENDAR_SESSION_STATE_WORSE, 
   CALENDAR_SESSION_STATE_SAME,
   CALENDAR_SESSION_STATE_BAD,
   CALENDAR_SESSION_STATE_WELL
@@ -26,7 +28,7 @@ export class CalendarSessions {
   }
 
 
-  constructor() {
+  constructor(public api: Api) {
     let calendarSessions = [
       {
         "day": new Date(Date.UTC(2018, 3, 8)),
@@ -50,9 +52,7 @@ export class CalendarSessions {
         "day": new Date(Date.UTC(2018, 3, 12,3,15)),
         "manual": true,
         "reprogram": false,
-        "notification":{
-          "text": "Burt Bear"
-        }
+        "notification":false
       },
       {
         "day": new Date(Date.UTC(2018, 4, 16)),
@@ -78,7 +78,7 @@ export class CalendarSessions {
         "reprogram": true,
         "notification":{
           "text": "Burt Bear",
-          "state": CALENDAR_SESSION_STATE_WORST
+          "state": CALENDAR_SESSION_STATE_WORSE
         }
       },
       {
@@ -116,11 +116,70 @@ export class CalendarSessions {
     });
   }
 
-  add(calendarSession: CalendarSession) {
+  save(calendarSession: CalendarSession) {
     this.calendarSessions.push(calendarSession);
+    
+    let seq = this.api.patch('signup', calendarSession).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
   }
 
-  delete(calendarSession: CalendarSession) {
-    this.calendarSessions.splice(this.calendarSessions.indexOf(calendarSession), 1);
+  addOneSession() {    
+    let seq = this.api.patch('signup',null).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
   }
+  addSeveralSessions() {    
+    let seq = this.api.patch('signup',null).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  /*add(calendarSession: CalendarSession) {
+    //this.calendarSessions.push(calendarSession);
+    
+    let seq = this.api.post('signup', calendarSession).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }*/
+
+  /*delete(calendarSession: CalendarSession) {
+    this.calendarSessions.splice(this.calendarSessions.indexOf(calendarSession), 1);
+  }*/
 }

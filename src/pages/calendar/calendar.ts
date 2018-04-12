@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage,NavController, MenuController,ModalController, AlertController,Platform,  } from 'ionic-angular';
+import { IonicPage,NavController, MenuController,Platform  } from 'ionic-angular';
 import * as moment from 'moment';
 
 import { 
   CalendarSession, 
-  CALENDAR_SESSION_STATE_MISSED,
-  CALENDAR_SESSION_STATE_BETTER, 
-  CALENDAR_SESSION_STATE_WORST, 
-  CALENDAR_SESSION_STATE_SAME 
+  CALENDAR_SESSION_STATE_MISSED  
 } from '../../models/calendar-session';
 import { CalendarSessions } from '../../providers/providers';
 
@@ -33,7 +30,7 @@ export class CalendarPage {
   todaySession: CalendarSession;
   nextSession: CalendarSession;
   
-  constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions, private modalCtrl: ModalController, private alertCtrl: AlertController, public menu: MenuController, public translate: TranslateService, public platform: Platform) {
+  constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions, public menu: MenuController, public translate: TranslateService, public platform: Platform) {
 
     if(this.translate.getBrowserLang()=="es"){
       this.calendar.locale="es-ES";
@@ -93,6 +90,10 @@ export class CalendarPage {
     
 
     return ret;
+  }
+
+  addSession(){
+    this.navCtrl.push('AddSessionPage');
   }
 
   doSession(calendarSession:CalendarSession){

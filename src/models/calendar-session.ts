@@ -27,7 +27,7 @@ export class CalendarSession {
 
   export const CALENDAR_SESSION_STATE_MISSED=0;
   export const CALENDAR_SESSION_STATE_BETTER=1;
-  export const CALENDAR_SESSION_STATE_WORST=2;
+  export const CALENDAR_SESSION_STATE_WORSE=2;
   export const CALENDAR_SESSION_STATE_SAME=3;
   export const CALENDAR_SESSION_STATE_BAD=4;
   export const CALENDAR_SESSION_STATE_WELL=5;

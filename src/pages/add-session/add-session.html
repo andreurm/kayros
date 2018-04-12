@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'ADD_SESSIONS' | translate }}</ion-title>    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content> 
+  
+    
+  <ion-list>          
+    <button ion-item (click)="addOneSession()">            
+      <h2>{{ 'ADD_ONE_SESSION' | translate }}</h2>
+    </button>  
+    <button ion-item (click)="addSeveralSessions()">            
+        <h2>{{ 'ADD_SEVERAL_SESSIONS' | translate }}</h2>
+      </button>    
+
+  </ion-list>
+</ion-content>

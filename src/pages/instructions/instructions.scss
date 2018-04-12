@@ -1,0 +1,80 @@
+page-instructions {
+  .logo{
+    margin: 6px;
+  }
+
+  ion-navbar{
+    height: 60px;
+    border: none;
+    border-color: transparent !important;
+    border-style: none;
+  }
+
+  .scroll-content, ion-header{
+    background-color: #eee;
+  }
+  
+  .bar-button-primary-ios, .bar-button-default.bar-button-ios-primary, .bar-button-clear-ios-primary{
+    color:#000;
+  }
+
+  .toolbar-background {
+    border-style: none !important;
+    background: transparent;
+    border-color: transparent !important;
+    border:none !important;
+  }
+
+  ion-slide{
+    text-align: center;
+  }
+  
+  .card-slide{
+    width: 90%;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 40px auto 0;
+    box-shadow: 6px 6px 20px #333;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 2.8rem;
+  }
+
+  .slide-image {
+    max-width: 100%;
+    margin: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .slide-last-image{
+    width: 80%;
+    margin: 80px 0 20px;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 20px 40px 20px;
+    margin: 0px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: color($colors, primary);
+    opacity: 1;
+}
+
+}

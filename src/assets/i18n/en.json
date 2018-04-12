@@ -21,11 +21,8 @@
   "TUTORIAL_CONTINUE_BUTTON": "Continue",
 
   "TUTORIAL_SLIDE1_DESCRIPTION": "Self-manage your problem your whole life",
-
   "TUTORIAL_SLIDE2_DESCRIPTION": "Do your sessions from your home or wherever you are",
-
   "TUTORIAL_SLIDE3_DESCRIPTION": "Contact the Kayros support team if you have questions",
-
   "TUTORIAL_SLIDE4_TITLE": "Ready to Start?",
 
   "WELCOME_INTRO": "The starting point for your next great Ionic app",
@@ -78,11 +75,25 @@
   "COMMENTS": "Comments",
   "TYPE_MESSAGE": "Type your message here",
   "SELECT_FELT": "Select how you felt",
-  "WORSE": "Worse",
-  "BAD": "Bad",
-  "SAME": "Same",
-  "WELL": "Well",
-  "BETTER": "Better"
+  "STATE_WORSE": "Worse",
+  "STATE_BAD": "Bad",
+  "STATE_SAME": "Same",
+  "STATE_WELL": "Well",
+  "STATE_BETTER": "Better",
+  "CONTINUE": "Continue",
+  "SELECT": "Select",
+  "ADD_SESSION_ERROR": "Unable to do the session",
+
+  "INSTRUCTIONS_SLIDE1_DESCRIPTION": "Apply the káyros device on the RIGHT side of your neck.",
+  "INSTRUCTIONS_SLIDE2_DESCRIPTION": "Apply the káyros device on the LEFT side of your neck.",
+  "INSTRUCTIONS_SLIDE3_DESCRIPTION": "Remember to rest and avoid the 'not-recommended activities' the best you can at the designated times",
+  "DONE": "Done",
+
+  "ADD_SESSIONS": "Add sessions",
+  "ADD_ONE_SESSION": "Add one session",
+  "ADD_SEVERAL_SESSIONS": "Add several sessions",
+  "ADD_SESSION_ERROR": "Unable to add session",
+  "ADD_SESSIONS_ERROR": "Unable to add sessions"
 
 
 }
