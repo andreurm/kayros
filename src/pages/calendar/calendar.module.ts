@@ -4,6 +4,9 @@ import { CalendarPage } from './calendar';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [

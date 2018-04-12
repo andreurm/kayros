@@ -1,4 +1,6 @@
 {
+  "BACK_BUTTON_TEXT": "Atrás",
+
   "NAME": "Nombre",
   "PASSWORD": "Contraseña",
   "EMAIL": "Email",
@@ -14,11 +16,15 @@
 
   "MAP_TITLE": "Mapa",
 
+  "TUTORIAL_SKIP_BUTTON": "Omitir",
+  "TUTORIAL_CONTINUE_BUTTON": "Continuar",
   "TUTORIAL_SLIDE1_DESCRIPTION": "Gestiona tu problema de manera autónoma el resto de tu vida",
 
   "TUTORIAL_SLIDE2_DESCRIPTION": "Haz tus sesiones en tu casa o donde quiera que estés",
 
   "TUTORIAL_SLIDE3_DESCRIPTION": "Contacta con el equipo de soporte de Kayros si tienes dudas",
+
+   "TUTORIAL_SLIDE4_TITLE": "¿Preparado para empezar?",
 
   "SETTINGS_TITLE": "Ajustes",
   "SETTINGS_OPTION1": "Opción 1",
@@ -46,5 +52,21 @@
 
   "CARDS_TITLE": "Social",
 
-  "SEARCH_TITLE": "Buscar"
+  "SEARCH_TITLE": "Buscar",
+
+  "RESCHEDULE_NEXT_SESSION": "Reprogramar siguiente sesión",
+  "DO_SESSION": "Hacer sesión ahora",
+  "NO_SESSION": "Hoy no tienes ninguna sesión que hacer",
+  "RESCHEDULE_SESSION": "Reprogramar session ",
+
+  "DO_YOUR_SESSION": "Haz tu sesión",
+  "HOW_HAVE_YOU_FELT": "¿Cómo te has sentido desde la última sesión?",
+  "COMMENTS": "Comentarios",
+  "TYPE_MESSAGE": "Escribe aquí tu mensaje",
+  "SELECT_FELT": "Selecciona cómo te has sentido",
+  "WORSE": "Peor",
+  "BAD": "Mal",
+  "SAME": "Igual",
+  "WELL": "Bien",
+  "BETTER": "Mejor"
 }

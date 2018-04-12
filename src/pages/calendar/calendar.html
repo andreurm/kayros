@@ -30,8 +30,34 @@
         (onTimeSelected)="onTimeSelected($event)"
         [markDisabled]="markDisabled"
         [monthviewDisplayEventTemplate]="template"
+        [locale]="calendar.locale"
         autoSelect=false
         step="30"
         class="calendar">
       </calendar>
+     
+      <div padding text-center class="forgot-pass" *ngIf="todaySession">
+        <button ion-button block color="danger"  (click)="doSession(todaySession)">{{ 'DO_SESSION' | translate }}</button>    
+        <br/> 
+        <button ion-button block outline color="primary"  (click)="rescheduleSession(todaySession)">{{ 'RESCHEDULE_SESSION' | translate }}</button>     
+      </div>
+      <ion-list *ngIf="!todaySession && nextSession" > 
+          <button ion-item (click)="rescheduleSession(nextSession)">            
+              <h2>{{ 'RESCHEDULE_NEXT_SESSION' | translate }}</h2>
+              <p>{{nextSession.formatDate()}}</p>
+            </button>    
+        <!--<ion-item text-center>
+            <p>{{ 'NO_SESSION' | translate }}</p>       
+        </ion-item>  --> 
+      </ion-list>
+
+       <!--
+      <ion-list >
+          <button ion-item (click)="doSession()">            
+            <h2>Hacer sesión del día</h2>
+            <p>{{ 'NEXT_SESSION' | translate }}</p>
+          </button>    
+        </ion-list>
+      -->
+      
 </ion-content>

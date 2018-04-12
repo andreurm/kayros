@@ -66,5 +66,23 @@
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+
+  "RESCHEDULE_NEXT_SESSION": "Reschedule next Session",
+  "DO_SESSION": "Do session now",
+  "NO_SESSION": "Today you don't have to do any session",
+  "RESCHEDULE_SESSION": "Reschedule Session",
+
+  "DO_YOUR_SESSION": "Do your session",
+  "HOW_HAVE_YOU_FELT": "How have you felt since the last session?",
+  "COMMENTS": "Comments",
+  "TYPE_MESSAGE": "Type your message here",
+  "SELECT_FELT": "Select how you felt",
+  "WORSE": "Worse",
+  "BAD": "Bad",
+  "SAME": "Same",
+  "WELL": "Well",
+  "BETTER": "Better"
+
+
 }

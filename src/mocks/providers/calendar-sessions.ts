@@ -5,7 +5,9 @@ import {
   CALENDAR_SESSION_STATE_MISSED,
   CALENDAR_SESSION_STATE_BETTER, 
   CALENDAR_SESSION_STATE_WORST, 
-  CALENDAR_SESSION_STATE_SAME
+  CALENDAR_SESSION_STATE_SAME,
+  CALENDAR_SESSION_STATE_BAD,
+  CALENDAR_SESSION_STATE_WELL
 } from '../../models/calendar-session';
 
 @Injectable()
@@ -32,7 +34,7 @@ export class CalendarSessions {
         "reprogram": true,
         "notification":{
           "text": "Burt Bear",
-          "state": CALENDAR_SESSION_STATE_MISSED
+          "state": CALENDAR_SESSION_STATE_WELL
         }
       },
       {
@@ -41,20 +43,19 @@ export class CalendarSessions {
         "reprogram": true,
         "notification":{
           "text": "Burt Bear",
-          "state": CALENDAR_SESSION_STATE_MISSED
+          "state": CALENDAR_SESSION_STATE_BAD
         }
       },
       {
-        "day": new Date(Date.UTC(2018, 3, 3)),
+        "day": new Date(Date.UTC(2018, 3, 12,3,15)),
         "manual": true,
         "reprogram": false,
         "notification":{
-          "text": "Burt Bear",
-          "state": CALENDAR_SESSION_STATE_MISSED
+          "text": "Burt Bear"
         }
       },
       {
-        "day": new Date(Date.UTC(2018, 3, 16)),
+        "day": new Date(Date.UTC(2018, 4, 16)),
         "manual": false,
         "reprogram": false,
         "notification":{
@@ -63,7 +64,7 @@ export class CalendarSessions {
         }
       },
       {
-        "day": new Date(Date.UTC(2018, 3, 22)),
+        "day": new Date(Date.UTC(2018, 5, 22)),
         "manual": false,
         "reprogram": false,
         "notification":{
@@ -72,7 +73,7 @@ export class CalendarSessions {
         }
       },
       {
-        "day": new Date(Date.UTC(2018, 3, 26)),
+        "day": new Date(Date.UTC(2018, 3, 26,0,54)),
         "manual": true,
         "reprogram": true,
         "notification":{

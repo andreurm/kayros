@@ -9,7 +9,7 @@ page-calendar {
         height: 30px;
         vertical-align: middle;
         font-size: 12px;
-        border:3px solid #fff;
+        border:3px solid transparent;
         font-weight: bold;
     }
     td[_ngcontent-c1] div span{
@@ -25,7 +25,15 @@ page-calendar {
         background-color: $notification-worst-color;
         color: #fff !important;
     }
+    td[_ngcontent-c1] div.calendar-state-4{
+        background-color: $notification-worst-color;
+        color: #fff !important;
+    }
     td[_ngcontent-c1] div.calendar-state-2{
+        background-color: $notification-better-color;
+        color: #fff !important;
+    }
+    td[_ngcontent-c1] div.calendar-state-5{
         background-color: $notification-better-color;
         color: #fff !important;
     }
@@ -38,9 +46,35 @@ page-calendar {
         border:3px solid #000;
     }
 
-    td[_ngcontent-c1] div.calendar-reprogram{
-        border:3px solid #fff;
-        border-style: dotted;
+    td[_ngcontent-c1] div.calendar-reprogram.calendar-state-0{
+        border:3px solid $notification-missed-color;
+        background-color: #fff;
+        color:#000 !important;
+    }
+    td[_ngcontent-c1] div.calendar-reprogram.calendar-state-1{
+        border:3px solid $notification-worst-color;
+        background-color: #fff;
+        color:#000 !important;
+    }
+    td[_ngcontent-c1] div.calendar-reprogram.calendar-state-4{
+        border:3px solid $notification-worst-color;
+        background-color: #fff;
+        color:#000 !important;
+    }
+    td[_ngcontent-c1] div.calendar-reprogram.calendar-state-2{
+        border:3px solid $notification-better-color;
+        background-color: #fff;
+        color:#000 !important;
+    }
+    td[_ngcontent-c1] div.calendar-reprogram.calendar-state-5{
+        border:3px solid $notification-better-color;
+        background-color: #fff;
+        color:#000 !important;
+    }
+    td[_ngcontent-c1] div.calendar-reprogram.calendar-state-3{
+        border:3px solid $notification-same-color;
+        background-color: #fff;
+        color:#000 !important;
     }
 
     .monthview-primary-with-event, .monthview-selected{
@@ -50,5 +84,13 @@ page-calendar {
     .monthview-selected[_ngcontent-c1] {
         background-color: transparent ;
         color: #000;
+    }
+
+    [_nghost-c0] > div[_ngcontent-c0] {
+        height: auto;
+    }
+
+    .monthview-current[_ngcontent-c1] {
+        background-color: #f0f0f0 !important;
     }
 }

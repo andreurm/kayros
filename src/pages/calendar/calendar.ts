@@ -26,11 +26,20 @@ export class CalendarPage {
  
   calendar = {
     mode: 'month',
-    currentDate: new Date()
+    currentDate: new Date(),
+    locale: 'en-US'
   };
+
+  todaySession: CalendarSession;
+  nextSession: CalendarSession;
   
-  constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions, private modalCtrl: ModalController, private alertCtrl: AlertController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
-    this.currentCalendarSessions = this.calendarSessions.query();    
+  constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions, private modalCtrl: ModalController, private alertCtrl: AlertController, public menu: MenuController, public translate: TranslateService, public platform: Platform) {
+
+    if(this.translate.getBrowserLang()=="es"){
+      this.calendar.locale="es-ES";
+    }
+    
+    this.currentCalendarSessions = this.calendarSessions.query();       
 
     for (let item of this.currentCalendarSessions) {
       let state= item.notification.state ? item.notification.state : CALENDAR_SESSION_STATE_MISSED;
@@ -38,26 +47,90 @@ export class CalendarPage {
       this.eventSource.push({
         title: "Kayros",
         allDay: false,
-        startTime: item.day,
-        endTime: item.day,        
+        startTime: item.day, //new Date(Date.UTC(2018, 3, 8)),
+        endTime: item.day,   //new Date(Date.UTC(2018, 3, 8)),     
         manual: item.manual,
         reprogram: item.reprogram,
         state:state
       });
-    }
 
-    /*this.eventSource = [
-      {        
-        title: 'Session 1',
-        startTime: new Date(Date.UTC(2018, 3, 8)),
-        endTime: new Date(Date.UTC(2018, 3, 8)),
-        allDay:false,
-        result: 2
+      if(this.isTodayCalendarSession(item)){
+        this.todaySession=item;
       }
-    ];*/
+      if(this.isNextCalendarSession(item)){
+        this.nextSession=item;
+      }
+    }   
 
    }
- /*
+
+  private isTodayCalendarSession(item:CalendarSession){
+    let today=new Date();
+    let ret=false;
+
+    if(moment(item.day).isSame(today,'day') && !item.isDone()){      
+        ret=true;
+    }
+
+    return ret;
+  }
+
+  private isNextCalendarSession(item:CalendarSession){
+    let today=new Date();
+    let ret=false;
+
+    if(!this.nextSession){
+      if(moment(today).isBefore(item.day,'day') && !item.isDone()){
+        ret=true;
+      }
+    }else{
+      if(moment(item.day).isBetween(today,this.nextSession.day,'day') && !item.isDone()){
+        ret=true;
+      }
+    }
+   
+
+    
+
+    return ret;
+  }
+
+  doSession(calendarSession:CalendarSession){
+    this.navCtrl.push('DoSessionPage', {
+      calendarSession: calendarSession
+    });
+  }
+
+
+  onViewTitleChanged(title) {
+    this.viewTitle = title;
+  }
+
+
+  /******** Codi comentat per si es vol implementar aquestes fucionalitats en un futur *********/
+
+  onEventSelected(event) {
+    /*let start = moment(event.startTime).format('LLLL');
+    let end = moment(event.endTime).format('LLLL');
+    
+    let alert = this.alertCtrl.create({
+      title: '' + event.title,
+      subTitle: 'From: ' + start + '<br>To: ' + end,
+      buttons: ['OK']
+    })
+    alert.present();*/
+  }
+  
+  onTimeSelected(ev) {
+    //this.selectedDay = ev.selectedTime;
+  }
+
+  markDisabled = (date: Date) => {
+    /*var current = new Date();
+    return date < current || date > current;*/
+    return false;
+  };
+  /*
   addEvent() {
     let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay});
     modal.present();
@@ -76,31 +149,6 @@ export class CalendarPage {
         });
       }
     });
-  }*/
- 
-  onViewTitleChanged(title) {
-    this.viewTitle = title;
-  }
- 
-  onEventSelected(event) {
-    /*let start = moment(event.startTime).format('LLLL');
-    let end = moment(event.endTime).format('LLLL');
-    
-    let alert = this.alertCtrl.create({
-      title: '' + event.title,
-      subTitle: 'From: ' + start + '<br>To: ' + end,
-      buttons: ['OK']
-    })
-    alert.present();*/
-  }
- 
-  onTimeSelected(ev) {
-    //this.selectedDay = ev.selectedTime;
-  }
-
-  markDisabled = (date: Date) => {
-    /*var current = new Date();
-    return date < current || date > current;*/
-    return false;
-  };
+  }*/ 
+  
 }

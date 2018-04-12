@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 
 export class CalendarSession {
 
@@ -7,6 +8,14 @@ export class CalendarSession {
         // @ts-ignore
         this[f] = fields[f];
       }
+    }
+
+    isDone(){
+      return !(this.notification.state==CALENDAR_SESSION_STATE_MISSED || !this.notification.state);
+    }
+
+    formatDate(){
+      return moment(this.day).format('dddd, D MMMM Y, H:mm');
     }
   
   }
@@ -20,3 +29,5 @@ export class CalendarSession {
   export const CALENDAR_SESSION_STATE_BETTER=1;
   export const CALENDAR_SESSION_STATE_WORST=2;
   export const CALENDAR_SESSION_STATE_SAME=3;
+  export const CALENDAR_SESSION_STATE_BAD=4;
+  export const CALENDAR_SESSION_STATE_WELL=5;
