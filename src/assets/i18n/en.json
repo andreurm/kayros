@@ -93,7 +93,9 @@
   "ADD_ONE_SESSION": "Add one session",
   "ADD_SEVERAL_SESSIONS": "Add several sessions",
   "ADD_SESSION_ERROR": "Unable to add session",
-  "ADD_SESSIONS_ERROR": "Unable to add sessions"
+  "ADD_SESSIONS_ERROR": "Unable to add sessions",
+
+  "RESCHEDULE_SESSION_ERROR": "Unable to reschedule session"
 
 
 }

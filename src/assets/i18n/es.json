@@ -82,5 +82,7 @@
   "ADD_ONE_SESSION": "Añadir una sesión",
   "ADD_SEVERAL_SESSIONS": "Añadir varias sesiones",
   "ADD_SESSION_ERROR": "No ha sido posible añadir la sesión",
-  "ADD_SESSIONS_ERROR": "No ha sido posible añadir las sesiones"
+  "ADD_SESSIONS_ERROR": "No ha sido posible añadir las sesiones",
+
+  "RESCHEDULE_SESSION_ERROR": "No ha sido posible reprogramar la sesión"
 }

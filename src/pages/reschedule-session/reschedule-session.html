@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'RESCHEDULE_SESSION' | translate }}</ion-title>    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content> 
+  <ion-list>          
+    <button ion-item (click)="addOneSession()">            
+      <h2>{{ 'NOW' | translate }}</h2>
+    </button>  
+    <button ion-item (click)="addSeveralSessions()">            
+      <h2>{{ 'SAME_DAY_DIFFERENT_TIME' | translate }}</h2>
+    </button>
+  </ion-list>
+
+  <ion-list>          
+      <button ion-item (click)="addOneSession()">            
+        <h2>{{ 'DAY_AFTER_SAME_TIME' | translate }}</h2>
+      </button>  
+      <button ion-item (click)="addSeveralSessions()">            
+        <h2>{{ 'DAY_AFTER_DIFFERENT_TIME' | translate }}</h2>
+      </button>
+    </ion-list>
+</ion-content>

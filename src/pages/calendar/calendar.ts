@@ -102,6 +102,12 @@ export class CalendarPage {
     });
   }
 
+  rescheduleSession(calendarSession:CalendarSession){
+    this.navCtrl.push('RescheduleSessionPage', {
+      calendarSession: calendarSession
+    });
+  }
+
 
   onViewTitleChanged(title) {
     this.viewTitle = title;

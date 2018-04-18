@@ -133,6 +133,21 @@ export class CalendarSessions {
     return seq;
   }
 
+  rescheduleSession(calendarSession: CalendarSession) {    
+    let seq = this.api.patch('signup',null).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
   addOneSession() {    
     let seq = this.api.patch('signup',null).share();
 
