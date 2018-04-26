@@ -34,7 +34,8 @@ export class User {
    * the user entered on the form.
    */
   login(accountInfo: any) {
-    let seq = this.api.post('login', accountInfo).share();
+    console.log(accountInfo);
+    let seq = this.api.post('users/oAuthLogin', accountInfo).share();
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
@@ -81,6 +82,23 @@ export class User {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
         this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  changePass(newPass: any) {
+    let seq = this.api.post('users/changePass.json', newPass).share();
+
+    seq.subscribe((res: any) => {
+      console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        this._loggedIn(res);
+      } else {
       }
     }, err => {
       console.error('ERROR', err);

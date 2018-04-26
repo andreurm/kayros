@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'SETUP' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <p padding-horizontal>{{ 'LABEL_START_DAY' | translate }}</p>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ 'START_DAY' | translate }}</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="setupDateStart"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <p padding-horizontal>{{ 'LABEL_START_TIME' | translate }}</p>
+  <ion-list>
+      <ion-item>
+        <ion-label>{{ 'START_TIME' | translate }}</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="setupTimeStart" ></ion-datetime>
+      </ion-item>
+  </ion-list>
+</ion-content>

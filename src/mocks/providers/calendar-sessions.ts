@@ -49,7 +49,7 @@ export class CalendarSessions {
         }
       },
       {
-        "day": new Date(Date.UTC(2018, 3, 12,3,15)),
+        "day": new Date(Date.UTC(2018, 3, 20,3,15)),
         "manual": true,
         "reprogram": false,
         "notification":false

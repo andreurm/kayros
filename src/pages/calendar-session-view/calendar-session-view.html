@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{calendarSession.formatDate()}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <wrap-history-session [session]=calendarSession *ngIf="calendarSession.notification" class="wrap-history-session-state-{{calendarSession.notification.state}}"></wrap-history-session>
+    <wrap-history-session [session]=calendarSession *ngIf="!calendarSession.notification" class="wrap-history-session-state-0"></wrap-history-session>
+</ion-content>

@@ -44,12 +44,17 @@
       <ion-list *ngIf="!todaySession && nextSession" > 
           <button ion-item (click)="rescheduleSession(nextSession)">            
               <h2>{{ 'RESCHEDULE_NEXT_SESSION' | translate }}</h2>
-              <p>{{nextSession.formatDate()}}</p>
+              <p>{{nextSession.formatDateTime()}}</p>
             </button>    
         <!--<ion-item text-center>
             <p>{{ 'NO_SESSION' | translate }}</p>       
         </ion-item>  --> 
       </ion-list>
+      <ion-list *ngIf="nextSession" > 
+        <button ion-item (click)="calendarSessionView(nextSession)">            
+            <h2>SIG</h2>
+          </button>    
+    </ion-list>
 
        <!--
       <ion-list >

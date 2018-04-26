@@ -1,0 +1,20 @@
+<ion-header no-shadow>
+  <ion-navbar>    
+    <ion-title>{{ 'INSTRUCTIONS' | translate }}</ion-title>
+    <ion-buttons end  *ngIf="showDone">
+      <button ion-button (click)="goProfile()" color="primary">{{ 'DONE' | translate}}</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  
+  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">
+    <ion-slide *ngFor="let slide of slides">
+      <div class="card-slide">
+          <img [src]="slide.image" class="slide-image" />
+          <p [innerHTML]="slide.description"></p>
+      </div>     
+    </ion-slide>    
+  </ion-slides>
+</ion-content>

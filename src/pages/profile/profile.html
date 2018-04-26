@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center>
+    <ion-title>{{ 'PROFILE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="goSetup()">
+      <h2>{{ 'SETUP_YOUR_PROGRAM' | translate }}</h2>
+    </button>
+    <button ion-item (click)="goHistory()">
+      <h2>{{ 'HISTORY' | translate }}</h2>
+    </button>
+    <button ion-item (click)="restartProgram()">
+      <h2>{{ 'RESTART_PROGRAM' | translate }}</h2>
+    </button>
+    <button ion-item (click)="goInstructionsProfile()">
+      <h2>{{ 'INSTRUCCIONS' | translate }}</h2>
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item (click)="goTimeReminder()">
+      <h2>{{ 'SET_TIME_FOR_REMINDER' | translate }}</h2>
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item (click)="goChangePassword()">
+      <h2>{{ 'PASSWORD' | translate }}</h2>
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item (click)="logout()">
+      <h2>{{ 'LOGOUT' | translate }}</h2>
+    </button>
+  </ion-list>
+</ion-content>

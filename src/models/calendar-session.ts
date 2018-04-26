@@ -15,6 +15,9 @@ export class CalendarSession {
     }
 
     formatDate(){
+      return moment(this.day).format('dddd, D MMMM Y');
+    }
+    formatDateTime(){
       return moment(this.day).format('dddd, D MMMM Y, H:mm');
     }
   

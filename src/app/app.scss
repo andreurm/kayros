@@ -42,3 +42,12 @@
     font-style: normal;
     src: url('../assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype')
 }
+
+
+.item{
+    background-color: #fff;
+}
+.button-md-primary,.button-ios-primary{
+    color: color($colors, secondary);
+    text-transform:none;
+}

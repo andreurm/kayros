@@ -1,0 +1,57 @@
+wrap-history-session {
+    display: block;
+}
+
+.wrap-history-session-state-0 {
+    ion-item {
+        border-top: 8px solid $notification-missed-color;
+    }
+    ion-item p {
+        color: $notification-missed-color;
+    }
+}
+
+.wrap-history-session-state-1 {
+    ion-item {
+        border-top: 8px solid $notification-better-color;
+    }
+    ion-item p {
+        color: $notification-better-color;
+    }
+}
+
+.wrap-history-session-state-2 {
+    ion-item {
+        border-top: 8px solid $notification-worst-color;
+    }
+    ion-item p {
+        color: $notification-worst-color;
+    }
+}
+
+.wrap-history-session-state-3 {
+    ion-item {
+        border-top: 8px solid $notification-same-color;
+    }
+    ion-item p {
+        color: $notification-same-color;
+    }
+}
+
+.wrap-history-session-state-4 {
+    ion-item {
+        border-top: 8px solid $notification-worst-color;
+    }
+    ion-item p {
+        color: $notification-worst-color;
+    }
+}
+
+.wrap-history-session-state-5 {
+    ion-item {
+        border-top: 8px solid $notification-better-color;
+    }
+    ion-item p {
+        color: $notification-better-color;
+    }
+}

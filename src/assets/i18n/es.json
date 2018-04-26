@@ -5,9 +5,11 @@
   "PASSWORD": "Contraseña",
   "EMAIL": "Email",
   "LOGIN": "Iniciar sesión",
+  "LOGOUT": "Cerrar sesión",
   "SIGNUP": "Registrarse",
   "FORGOT": "¿No recuerdas la contraseña?",
   "SEND": "Enviar",
+  "SAVE": "Guardar",
   "BACK_LOGIN": "Volver",
 
   "TAB1_TITLE": "Items",
@@ -18,19 +20,19 @@
 
   "TUTORIAL_SKIP_BUTTON": "Omitir",
   "TUTORIAL_CONTINUE_BUTTON": "Continuar",
+
   "TUTORIAL_SLIDE1_DESCRIPTION": "Gestiona tu problema de manera autónoma el resto de tu vida",
-
   "TUTORIAL_SLIDE2_DESCRIPTION": "Haz tus sesiones en tu casa o donde quiera que estés",
-
   "TUTORIAL_SLIDE3_DESCRIPTION": "Contacta con el equipo de soporte de Kayros si tienes dudas",
-
-   "TUTORIAL_SLIDE4_TITLE": "¿Preparado para empezar?",
+  "TUTORIAL_SLIDE4_TITLE": "¿Preparado para empezar?",
 
   "SETTINGS_TITLE": "Ajustes",
   "SETTINGS_OPTION1": "Opción 1",
   "SETTINGS_OPTION2": "Opción 2",
   "SETTINGS_OPTION3": "Opción 3",
   "SETTINGS_OPTION4": "Opción 4",
+
+  "SETTINGS_PROFILE_BUTTON": "Editar Perfil",
 
   "SETTINGS_PAGE_PROFILE": "Editar Perfil",
 
@@ -44,6 +46,7 @@
   "SIGNUP_BUTTON": "Registrarse",
   "FORGOT_ERROR": "El email indicado no corresponde a ningún usuario",
   "FORGOT_SUCCESS": "Hemos enviado un email con instrucciones a la dirección indicada",
+  "CHANGE_PASS_ERROR": "No ha sido posible modificar la contraseña. Por favor inténtalo de nuevo.",
 
   "LIST_MASTER_TITLE": "Items",
 
@@ -57,7 +60,7 @@
   "RESCHEDULE_NEXT_SESSION": "Reprogramar siguiente sesión",
   "DO_SESSION": "Hacer sesión ahora",
   "NO_SESSION": "Hoy no tienes ninguna sesión que hacer",
-  "RESCHEDULE_SESSION": "Reprogramar session ",
+  "RESCHEDULE_SESSION": "Reprogramar sesión ",
 
   "DO_YOUR_SESSION": "Haz tu sesión",
   "HOW_HAVE_YOU_FELT": "¿Cómo te has sentido desde la última sesión?",
@@ -69,6 +72,7 @@
   "STATE_SAME": "Igual",
   "STATE_WELL": "Bien",
   "STATE_BETTER": "Mejor",
+  "STATE_MISSED": "Perdida",
   "CONTINUE": "Continuar",
   "SELECT": "Seleccionar",
   "DO_SESSION_ERROR": "No ha sido posible hacer la sesión",
@@ -76,7 +80,31 @@
   "INSTRUCTIONS_SLIDE1_DESCRIPTION": "Aplica el dispositivo káyros en la parte DERECHA de tu cuello.",
   "INSTRUCTIONS_SLIDE2_DESCRIPTION": "Aplica el dispositivo káyros en la parte IZQUIERDA de tu cuello.",
   "INSTRUCTIONS_SLIDE3_DESCRIPTION": "Recuerda que debes descansar y evitar las actividades no recomendadas.",
-  "DONE": "Continuar",
+  "DONE": "Hecho",  
+
+  "INSTRUCTIONS": "Instrucciones",
+  "INSTRUCTIONS_PROFILE_SLIDE1_DESCRIPTION": "Permitir notificaciones en tu teléfono.",
+  "INSTRUCTIONS_PROFILE_SLIDE2_DESCRIPTION": "Autogestiona tu problema toda tu vida.",
+  "INSTRUCTIONS_PROFILE_SLIDE3_DESCRIPTION": "Haz tus sesiones desde tu casa o donde sea que estés.",
+  "INSTRUCTIONS_PROFILE_SLIDE4_DESCRIPTION": "Ponte en contacto con el equipo de soporte de káyros si tienes alguna pregunta.",
+  "INSTRUCTIONS_PROFILE_SLIDE5_DESCRIPTION": "Después de cada sesión, recuerda descansar.",
+
+  "REMINDER":"Notificaciones",
+  "TIME_REMINDER":"Selecciona la hora de la notificación",
+
+  "PROFILE":"Perfil",
+  "SETUP_YOUR_PROGRAM":"Configura tu programa",
+  "HISTORY":"Historial",
+  "RESTART_PROGRAM":"Reiniciar programa",
+  "INSTRUCCIONS":"Instrucciones",
+  "SET_TIME_FOR_REMINDER":"Establecer tiempo de recordatorio",
+
+
+  "SETUP":"Configuración",
+  "LABEL_START_DAY":"¿Qué día vas a comenzar tu programa káyros?",
+  "START_DAY":"Selecciona de inicio",
+  "LABEL_START_TIME":"¿A qué hora planeas hacer tus sesiones?",
+  "START_TIME":"Hora de inicio",
 
   "ADD_SESSIONS": "Añadir sesiones",
   "ADD_ONE_SESSION": "Añadir una sesión",
@@ -84,5 +112,21 @@
   "ADD_SESSION_ERROR": "No ha sido posible añadir la sesión",
   "ADD_SESSIONS_ERROR": "No ha sido posible añadir las sesiones",
 
-  "RESCHEDULE_SESSION_ERROR": "No ha sido posible reprogramar la sesión"
+  "RESCHEDULE_SESSION_FOR":"Reprogama tu sesión por:",
+  "NOW":"Ahora",
+  "SAME_DAY_DIFFERENT_TIME":"Mismo día distinta hora",
+  "DAY_AFTER_SAME_TIME":"El día después a la misma hora",
+  "DAY_AFTER_DIFFERENT_TIME":"El día después a hora distinta",
+
+  "RESCHEDULE_SESSION_ERROR": "No ha sido posible reprogramar la sesión",
+  
+  "CURRENT": "Actual",
+  "CURRENT_PASSWORD": "Contraseña actual",
+  "NEW": "Nueva",
+  "NEW_PASSWORD": "Nueva contraseña",
+  "VERIFY": "Verificación",
+  "VERIFY_PASSWORD": "Repite la nueva contraseña",
+  "OLD_PASSWORD_ERROR":"la contraseña actual no es válida",
+  "PASSWORD_REQUIRED_ERROR":"La nueva contraseña es obligatoria",
+  "PASSWORD_VERIFY_REQUIRED_ERROR":"La contraseña y la verificación no coinciden"
 }

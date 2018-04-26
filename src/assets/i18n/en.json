@@ -2,13 +2,14 @@
   "BACK_BUTTON_TEXT": "Back",
 
   "NAME": "Name",
-  "EMAIL": "Email",
-  "USERNAME": "Username",
   "PASSWORD": "Password",
+  "EMAIL": "Email",
   "LOGIN": "Sign in",
+  "LOGOUT": "Log Out",
   "SIGNUP": "Sign up",
   "FORGOT": "forgot password?",
   "SEND": "Send",
+  "SAVE": "Save",
   "BACK_LOGIN": "back to Log In",
 
   "TAB1_TITLE": "Items",
@@ -24,8 +25,6 @@
   "TUTORIAL_SLIDE2_DESCRIPTION": "Do your sessions from your home or wherever you are",
   "TUTORIAL_SLIDE3_DESCRIPTION": "Contact the Kayros support team if you have questions",
   "TUTORIAL_SLIDE4_TITLE": "Ready to Start?",
-
-  "WELCOME_INTRO": "The starting point for your next great Ionic app",
 
   "SETTINGS_TITLE": "Settings",
   "SETTINGS_OPTION1": "Option 1",
@@ -47,23 +46,16 @@
   "SIGNUP_BUTTON": "Sign up",
   "FORGOT_ERROR": "The email doesn't match any user",
   "FORGOT_SUCCESS": "We have sent an email with password reset instructions to your address",
+  "CHANGE_PASS_ERROR": "Unable to change password. Please try again.",
 
   "LIST_MASTER_TITLE": "Items",
 
   "ITEM_CREATE_TITLE": "New Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
-  "ITEM_NAME_PLACEHOLDER": "Name",
-  "ITEM_ABOUT_PLACEHOLDER": "About",
-
-  "DONE_BUTTON": "Done",
-  "CANCEL_BUTTON": "Cancel",
-  "DELETE_BUTTON": "Delete",
-
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
 
   "RESCHEDULE_NEXT_SESSION": "Reschedule next Session",
   "DO_SESSION": "Do session now",
@@ -80,14 +72,39 @@
   "STATE_SAME": "Same",
   "STATE_WELL": "Well",
   "STATE_BETTER": "Better",
+  "STATE_MISSED": "Missed",
   "CONTINUE": "Continue",
   "SELECT": "Select",
-  "ADD_SESSION_ERROR": "Unable to do the session",
+  "DO_SESSION_ERROR": "Unable to do the session",
 
   "INSTRUCTIONS_SLIDE1_DESCRIPTION": "Apply the káyros device on the RIGHT side of your neck.",
   "INSTRUCTIONS_SLIDE2_DESCRIPTION": "Apply the káyros device on the LEFT side of your neck.",
   "INSTRUCTIONS_SLIDE3_DESCRIPTION": "Remember to rest and avoid the 'not-recommended activities' the best you can at the designated times",
   "DONE": "Done",
+
+  "INSTRUCTIONS": "Instructions",
+  "INSTRUCTIONS_PROFILE_SLIDE1_DESCRIPTION": "Allow notifications on your cell phone.",
+  "INSTRUCTIONS_PROFILE_SLIDE2_DESCRIPTION": "Self-manage your problem your whole life.",
+  "INSTRUCTIONS_PROFILE_SLIDE3_DESCRIPTION": "Do your sessions from your home or wherever you are.",
+  "INSTRUCTIONS_PROFILE_SLIDE4_DESCRIPTION": "Contact the káyros support team if you have questions.",
+  "INSTRUCTIONS_PROFILE_SLIDE5_DESCRIPTION": "After each session remember to rest.",
+
+  "REMINDER":"Reminder",
+  "TIME_REMINDER":"Select time of reminder",
+
+  "PROFILE":"Profile",
+  "SETUP_YOUR_PROGRAM":"Set up your program",
+  "HISTORY":"History",
+  "RESTART_PROGRAM":"Restart program",
+  "INSTRUCCIONS":"Instructions",
+  "SET_TIME_FOR_REMINDER":"Set time for reminder",
+
+
+  "SETUP":"Set up",
+  "LABEL_START_DAY":"What day are you going to start your káyros program?",
+  "START_DAY":"Start day",
+  "LABEL_START_TIME":"What time do you plan to do your sessions?",
+  "START_TIME":"Start time",
 
   "ADD_SESSIONS": "Add sessions",
   "ADD_ONE_SESSION": "Add one session",
@@ -95,7 +112,21 @@
   "ADD_SESSION_ERROR": "Unable to add session",
   "ADD_SESSIONS_ERROR": "Unable to add sessions",
 
-  "RESCHEDULE_SESSION_ERROR": "Unable to reschedule session"
+  "RESCHEDULE_SESSION_FOR":"Reschedule your session for:",
+  "NOW":"Now",
+  "SAME_DAY_DIFFERENT_TIME":"Same day different time",
+  "DAY_AFTER_SAME_TIME":"The day after same time",
+  "DAY_AFTER_DIFFERENT_TIME":"The day after different time",
 
-
+  "RESCHEDULE_SESSION_ERROR": "Unable to reschedule session",
+  
+  "CURRENT": "Current",
+  "CURRENT_PASSWORD": "Current password",
+  "NEW": "New",
+  "NEW_PASSWORD": "New password",
+  "VERIFY": "Verify",
+  "VERIFY_PASSWORD": "New password again",
+  "OLD_PASSWORD_ERROR":"Current password not valid",
+  "PASSWORD_REQUIRED_ERROR":"New password is required",
+  "PASSWORD_VERIFY_REQUIRED_ERROR":"Password and verification do not match"
 }

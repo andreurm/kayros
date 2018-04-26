@@ -107,6 +107,11 @@ export class CalendarPage {
       calendarSession: calendarSession
     });
   }
+  calendarSessionView(calendarSession:CalendarSession){
+    this.navCtrl.push('CalendarSessionViewPage', {
+      calendarSession: calendarSession
+    });
+  }
 
 
   onViewTitleChanged(title) {

@@ -1,0 +1,13 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center>
+    <ion-title>{{ 'HISTORY' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div *ngFor="let session of currentCalendarSessions">
+      <wrap-history-session [session]=session *ngIf="session.notification" class="wrap-history-session-state-{{session.notification.state}}"></wrap-history-session>
+      <wrap-history-session [session]=session *ngIf="!session.notification" class="wrap-history-session-state-0"></wrap-history-session>
+  </div>
+
+</ion-content>

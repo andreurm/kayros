@@ -1,15 +1,25 @@
 page-forgot {
-    .scroll-content, ion-item, ion-list{
-        background-color: #eee !important;
-    }
-
-    .big-logo{
+    .big-logo {
         width: 90%;
         margin: 100px auto;
         display: block;
     }
-
-    .forgot-pass .button{
+    .item {
+        background-color: transparent;
+    }
+    .item-md ion-icon[item-left],
+    .item-md ion-icon[item-right],
+    .item-md ion-icon[item-start],
+    .item-md ion-icon[item-end],
+    .item-ios ion-icon[item-left],
+    .item-ios ion-icon[item-right],
+    .item-ios ion-icon[item-start],
+    .item-ios ion-icon[item-end] {
+        margin-top: 26px;
+        margin-bottom: 0px;
+        font-size: 34px;
+    }
+    .forgot-pass .button {
         font-size: 12px !important;
     }
 }
