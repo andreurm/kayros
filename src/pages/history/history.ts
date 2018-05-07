@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import * as moment from 'moment';
+import { Observable } from 'rxjs/Rx';
 
 import {
   CalendarSession,
@@ -17,14 +18,25 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'history.html'
 })
 export class HistoryPage {
-  currentCalendarSessions: CalendarSession[];
+  currentCalendarSessions: CalendarSession[] = [];
   constructor(
     public navCtrl: NavController,
     public toastCtrl: ToastController,
     public translateService: TranslateService,
-    public calendarSessions: CalendarSessions, ) {
-      this.currentCalendarSessions = this.calendarSessions.query(); 
+    public calendarSessions: CalendarSessions) {
+    this.fetchCalendarSessions();
   }
-  
+
+  private fetchCalendarSessions(): void {
+
+    this.calendarSessions.query().subscribe((resp) => {
+      for (let item of resp['calendarsessions']) {
+        item = new CalendarSession(item);
+        this.currentCalendarSessions.push(item);
+      }
+    }, (err) => {
+    });
+  }
+
 
 }

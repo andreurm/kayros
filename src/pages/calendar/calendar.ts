@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { IonicPage,NavController, MenuController,Platform  } from 'ionic-angular';
+import { IonicPage, NavController, MenuController, Platform } from 'ionic-angular';
 import * as moment from 'moment';
+import { Observable } from 'rxjs/Rx';
 
-import { 
-  CalendarSession, 
-  CALENDAR_SESSION_STATE_MISSED  
+import {
+  CalendarSession,
+  CALENDAR_SESSION_STATE_MISSED
 } from '../../models/calendar-session';
 import { CalendarSessions } from '../../providers/providers';
 
 import { TranslateService } from '@ngx-translate/core';
- 
+
 @IonicPage()
 @Component({
   selector: 'page-calendar',
@@ -20,7 +21,7 @@ export class CalendarPage {
   viewTitle: string;
   selectedDay = new Date();
   currentCalendarSessions: CalendarSession[];
- 
+
   calendar = {
     mode: 'month',
     currentDate: new Date(),
@@ -29,85 +30,88 @@ export class CalendarPage {
 
   todaySession: CalendarSession;
   nextSession: CalendarSession;
-  
+
   constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions, public menu: MenuController, public translate: TranslateService, public platform: Platform) {
 
-    if(this.translate.getBrowserLang()=="es"){
-      this.calendar.locale="es-ES";
+    if (this.translate.getBrowserLang() == "es") {
+      this.calendar.locale = "es-ES";
     }
-    
-    this.currentCalendarSessions = this.calendarSessions.query();       
+    this.fetchCalendarSessions();
+  }
 
-    for (let item of this.currentCalendarSessions) {
-      let state= item.notification.state ? item.notification.state : CALENDAR_SESSION_STATE_MISSED;
+  private fetchCalendarSessions(): void {
+    this.calendarSessions.query().subscribe((resp) => {
+      let events = this.eventSource;
+      for (let item of resp['calendarsessions']) {
+        item = new CalendarSession(item);
+        let state = item.notification.state ? item.notification.state : CALENDAR_SESSION_STATE_MISSED;
 
-      this.eventSource.push({
-        title: "Kayros",
-        allDay: false,
-        startTime: item.day, //new Date(Date.UTC(2018, 3, 8)),
-        endTime: item.day,   //new Date(Date.UTC(2018, 3, 8)),     
-        manual: item.manual,
-        reprogram: item.reprogram,
-        state:state
+        let eventData = ({
+          title: "Kayros",
+          allDay: false,
+          startTime: new Date(item.day), //new Date(Date.UTC(2018, 3, 8)),
+          endTime: new Date(item.day),   //new Date(Date.UTC(2018, 3, 8)),     
+          manual: item.manual,
+          reprogram: item.reprogram,
+          state: state
+        });
+
+        if (this.isTodayCalendarSession(item)) {
+          this.todaySession = item;
+        }
+        if (this.isNextCalendarSession(item)) {
+          this.nextSession = item;
+        }
+        events.push(eventData);
+      }
+      this.eventSource = [];
+      setTimeout(() => {
+        this.eventSource = events;
       });
+    }, (err) => {
+    });
+  }
 
-      if(this.isTodayCalendarSession(item)){
-        this.todaySession=item;
-      }
-      if(this.isNextCalendarSession(item)){
-        this.nextSession=item;
-      }
-    }   
-
-   }
-
-  private isTodayCalendarSession(item:CalendarSession){
-    let today=new Date();
-    let ret=false;
-
-    if(moment(item.day).isSame(today,'day') && !item.isDone()){      
-        ret=true;
+  private isTodayCalendarSession(item: CalendarSession) {
+    let today = new Date();
+    let ret = false;
+    if (moment(item.day).isSame(today, 'day') && !item.isDone()) {
+      ret = true;
     }
-
     return ret;
   }
 
-  private isNextCalendarSession(item:CalendarSession){
-    let today=new Date();
-    let ret=false;
-
-    if(!this.nextSession){
-      if(moment(today).isBefore(item.day,'day') && !item.isDone()){
-        ret=true;
+  private isNextCalendarSession(item: CalendarSession) {
+    let today = new Date();
+    let ret = false;
+    if (!this.nextSession) {
+      if (moment(today).isBefore(item.day, 'day') && !item.isDone()) {
+        ret = true;
       }
-    }else{
-      if(moment(item.day).isBetween(today,this.nextSession.day,'day') && !item.isDone()){
-        ret=true;
+    } else {
+      if (moment(item.day).isBetween(today, this.nextSession.day, 'day') && !item.isDone()) {
+        ret = true;
       }
     }
-   
-
-    
-
     return ret;
   }
 
-  addSession(){
+  addSession() {
     this.navCtrl.push('AddSessionPage');
   }
 
-  doSession(calendarSession:CalendarSession){
+  doSession(calendarSession: CalendarSession) {
     this.navCtrl.push('DoSessionPage', {
       calendarSession: calendarSession
     });
   }
 
-  rescheduleSession(calendarSession:CalendarSession){
+  rescheduleSession(calendarSession: CalendarSession) {
     this.navCtrl.push('RescheduleSessionPage', {
       calendarSession: calendarSession
     });
   }
-  calendarSessionView(calendarSession:CalendarSession){
+  calendarSessionView(calendarSession: CalendarSession) {
     this.navCtrl.push('CalendarSessionViewPage', {
       calendarSession: calendarSession
     });
@@ -132,7 +136,7 @@ export class CalendarPage {
     })
     alert.present();*/
   }
-  
+
   onTimeSelected(ev) {
     //this.selectedDay = ev.selectedTime;
   }
@@ -161,6 +165,6 @@ export class CalendarPage {
         });
       }
     });
-  }*/ 
-  
+  }*/
+
 }

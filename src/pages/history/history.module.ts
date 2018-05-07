@@ -4,6 +4,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { HistoryPage } from './history';
 import {ComponentsModule} from '../../components/components.module';
 
+import { CalendarSessions } from '../../providers/providers';
 @NgModule({
   declarations: [
     HistoryPage
@@ -16,6 +17,7 @@ import {ComponentsModule} from '../../components/components.module';
   ],
   exports: [
     HistoryPage
-  ]
+  ],
+  providers: [CalendarSessions],
 })
 export class HistoryPageModule { }

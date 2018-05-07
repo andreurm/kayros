@@ -47,6 +47,9 @@
 .item{
     background-color: #fff;
 }
+.k-hide{
+    display: none;
+}
 .button-md-primary,.button-ios-primary{
     color: color($colors, secondary);
     text-transform:none;

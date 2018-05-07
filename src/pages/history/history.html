@@ -6,8 +6,8 @@
 </ion-header>
 <ion-content>
   <div *ngFor="let session of currentCalendarSessions">
-      <wrap-history-session [session]=session *ngIf="session.notification" class="wrap-history-session-state-{{session.notification.state}}"></wrap-history-session>
-      <wrap-history-session [session]=session *ngIf="!session.notification" class="wrap-history-session-state-0"></wrap-history-session>
+    <wrap-history-session [session]=session *ngIf="session.notification" class="wrap-history-session-state-{{session.notification.state}}"></wrap-history-session>
+    <wrap-history-session [session]=session *ngIf="!session.notification" class="wrap-history-session-state-0"></wrap-history-session>
   </div>
 
 </ion-content>

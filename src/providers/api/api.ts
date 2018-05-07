@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /**
@@ -6,9 +6,32 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'http://localhost/projects/kayros/web/publish';
-
+  //url: string = 'http://localhost/projects/kayros/web/publish';
+  url: string = 'http://www.andreurm.cat/kayrosws';
+  access_token: string;
   constructor(public http: HttpClient) {
+  }
+
+
+  private setOAuthHeaders(res) {
+    this.access_token = res.success.access_token;
+  }
+
+  loginOauth(accountInfo) {
+
+    let seq = this.post('users/oAuthLogin.json', accountInfo).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.success) {
+        this.setOAuthHeaders(res);
+      } else {
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
   }
 
   get(endpoint: string, params?: any, reqOpts?: any) {
@@ -25,11 +48,18 @@ export class Api {
         reqOpts.params = reqOpts.params.set(k, params[k]);
       }
     }
-
+    reqOpts.params = reqOpts.params.set('access_token', this.access_token);
     return this.http.get(this.url + '/' + endpoint, reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
+   
+    if (!reqOpts) {
+      reqOpts = {
+        params: new HttpParams()
+      };
+    }
+    reqOpts.params = reqOpts.params.set('access_token', this.access_token);
     return this.http.post(this.url + '/' + endpoint, body, reqOpts);
   }
 

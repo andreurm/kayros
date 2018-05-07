@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item (click)="goSetup()">
+    <button *ngIf="!is_started_by_user" ion-item (click)="goSetup()">
       <h2>{{ 'SETUP_YOUR_PROGRAM' | translate }}</h2>
     </button>
     <button ion-item (click)="goHistory()">

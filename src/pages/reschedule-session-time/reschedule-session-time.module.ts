@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
-
-import { DoSessionPage } from './do-session';
+import { RescheduleSessionTimePage } from './reschedule-session-time';
 import { CalendarSessions } from '../../providers/providers';
 
 @NgModule({
   declarations: [
-    DoSessionPage,
+    RescheduleSessionTimePage,
   ],
   imports: [
-    IonicPageModule.forChild(DoSessionPage),
+    IonicPageModule.forChild(RescheduleSessionTimePage),
     TranslateModule.forChild()
   ],
   exports: [
-    DoSessionPage
+    RescheduleSessionTimePage
   ],
   providers: [CalendarSessions],
 })
-export class DoSessionPageModule { }
+export class RescheduleSessionTimePageModule { }

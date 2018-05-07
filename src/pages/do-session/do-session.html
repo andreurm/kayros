@@ -1,37 +1,40 @@
 <ion-header>
 
-  <ion-navbar  color="primary">
-    <ion-title>{{ 'DO_YOUR_SESSION' | translate }}</ion-title>    
+  <ion-navbar color="primary">
+    <ion-title>{{ 'DO_YOUR_SESSION' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content> 
-  
-    <form (submit)="sendSessionResult()">
-        <ion-list>          
-          <ion-item>      
-              <ion-label stacked>{{ 'HOW_HAVE_YOU_FELT' | translate }}</ion-label>
+<ion-content>
 
-            <ion-select [(ngModel)]="calendarSession.state" name="state" placeholder="{{ 'SELECT' | translate }}">
-              <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_WORSE}}">{{ 'STATE_WORSE' | translate }}</ion-option>
-              <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_BAD}}">{{ 'STATE_BAD' | translate }}</ion-option>
-              <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_SAME}}">{{ 'STATE_SAME' | translate }}</ion-option>
-              <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_WELL}}">{{ 'STATE_WELL' | translate }}</ion-option>
-              <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_BETTER}}">{{ 'STATE_BETTER' | translate }}</ion-option>
-            </ion-select>
-          </ion-item>
-    
-          <ion-item>
-            <ion-label stacked>{{ 'COMMENTS' | translate }}</ion-label>
-            <ion-textarea rows="10" placeholder="{{ 'TYPE_MESSAGE' | translate }}" [(ngModel)]="calendarSession.notification.text" name="comments"></ion-textarea>
-          </ion-item>
-    
-          <div padding>
-            <button ion-button color="primary" block>{{ 'CONTINUE' | translate }}</button>           
-          </div>
-    
-        </ion-list>
-      </form>
+  <form [formGroup]="formgroup" #doSessionForm="ngForm" (submit)="sendSessionResult()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>{{ 'HOW_HAVE_YOU_FELT' | translate }}</ion-label>
+
+        <ion-select [(ngModel)]="calendarSession.notification.state" name="state" formControlName="state" placeholder="{{ 'SELECT' | translate }}">
+          <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_WORSE}}">{{ 'STATE_WORSE' | translate }}</ion-option>
+          <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_BAD}}">{{ 'STATE_BAD' | translate }}</ion-option>
+          <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_SAME}}">{{ 'STATE_SAME' | translate }}</ion-option>
+          <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_WELL}}">{{ 'STATE_WELL' | translate }}</ion-option>
+          <ion-option value="{{calendarSessionStates.CALENDAR_SESSION_STATE_BETTER}}">{{ 'STATE_BETTER' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>{{ 'COMMENTS' | translate }}</ion-label>
+        <ion-textarea formControlName="text" rows="10" placeholder="{{ 'TYPE_MESSAGE' | translate }}" [(ngModel)]="calendarSession.notification.text"
+          name="comments"></ion-textarea>
+      </ion-item>
+
+      <div padding>
+        <button type="submit" [disabled]="doSessionForm.form.invalid" text-capitalize ion-button outline color="primary">
+          {{ 'CONTINUE' | translate }}
+        </button>
+      </div>
+
+    </ion-list>
+  </form>
 </ion-content>

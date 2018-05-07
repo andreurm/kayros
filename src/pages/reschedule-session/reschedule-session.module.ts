@@ -4,6 +4,8 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { RescheduleSessionPage } from './reschedule-session';
 
+import { CalendarSessions } from '../../providers/providers';
+
 @NgModule({
   declarations: [
     RescheduleSessionPage,
@@ -14,6 +16,7 @@ import { RescheduleSessionPage } from './reschedule-session';
   ],
   exports: [
     RescheduleSessionPage
-  ]
+  ],
+  providers: [CalendarSessions],
 })
 export class RescheduleSessionPageModule { }

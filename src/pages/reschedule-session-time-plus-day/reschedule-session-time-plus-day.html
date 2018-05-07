@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'RESCHEDULE_SESSION' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formgroup" #rescheduleSessionTimePlusDayForm="ngForm" (ngSubmit)="rescheduleSessionTimePlusDay()">
+
+    <p padding-horizontal>{{ 'START_TIME_RESCHEDULE_SESSION' | translate }}</p>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{ 'START_TIME' | translate }}</ion-label>
+        <ion-datetime formControlName="rescheduleSessionTimePlusDayTimeStart" displayFormat="HH:mm"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <button type="submit" [disabled]="rescheduleSessionTimePlusDayForm.form.invalid" text-capitalize ion-button outline color="primary">
+      {{ 'SAVE' | translate }}
+    </button>
+  </form>
+</ion-content>

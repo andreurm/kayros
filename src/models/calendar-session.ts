@@ -10,7 +10,7 @@ export class CalendarSession {
       }
     }
 
-    isDone(){
+    public isDone(){
       return !(this.notification.state==CALENDAR_SESSION_STATE_MISSED || !this.notification.state);
     }
 

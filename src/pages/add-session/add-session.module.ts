@@ -4,6 +4,8 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { AddSessionPage } from './add-session';
 
+import { CalendarSessions } from '../../providers/providers';
+
 @NgModule({
   declarations: [
     AddSessionPage,
@@ -14,6 +16,7 @@ import { AddSessionPage } from './add-session';
   ],
   exports: [
     AddSessionPage
-  ]
+  ],
+  providers: [CalendarSessions]
 })
 export class AddSessionPageModule { }

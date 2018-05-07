@@ -6,6 +6,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+
+import { CalendarSessions } from '../../providers/providers';
+
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -19,6 +22,7 @@ registerLocaleData(localeEs);
   ],
   exports: [
     CalendarPage
-  ]
+  ],
+  providers: [CalendarSessions],
 })
 export class CalendarPageModule { }

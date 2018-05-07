@@ -61,6 +61,7 @@
   "DO_SESSION": "Do session now",
   "NO_SESSION": "Today you don't have to do any session",
   "RESCHEDULE_SESSION": "Reschedule Session",
+  "START_TIME_RESCHEDULE_SESSION": "What time do you plan to do your session?",
 
   "DO_YOUR_SESSION": "Do your session",
   "HOW_HAVE_YOU_FELT": "How have you felt since the last session?",
@@ -98,7 +99,11 @@
   "RESTART_PROGRAM":"Restart program",
   "INSTRUCCIONS":"Instructions",
   "SET_TIME_FOR_REMINDER":"Set time for reminder",
+  "SETUP_ERROR": "Unable to start your treatment. Please try again.",
+  "SETUP_SUCCESS": "Treatment started correctly.",
 
+  "RESTART_PROGRAM_ERROR":"The program could not be restarted.",
+  "RESTART_PROGRAM_SUCCESS":"Program restarted correctly.",
 
   "SETUP":"Set up",
   "LABEL_START_DAY":"What day are you going to start your káyros program?",
@@ -110,7 +115,9 @@
   "ADD_ONE_SESSION": "Add one session",
   "ADD_SEVERAL_SESSIONS": "Add several sessions",
   "ADD_SESSION_ERROR": "Unable to add session",
+  "ADD_SESSION_SUCCESS": "Session added correctly",
   "ADD_SESSIONS_ERROR": "Unable to add sessions",
+  "ADD_SESSIONS_SUCCESS": "Sessions added correctly",
 
   "RESCHEDULE_SESSION_FOR":"Reschedule your session for:",
   "NOW":"Now",
@@ -119,6 +126,7 @@
   "DAY_AFTER_DIFFERENT_TIME":"The day after different time",
 
   "RESCHEDULE_SESSION_ERROR": "Unable to reschedule session",
+  "RESCHEDULE_SESSION_SUCCESS": "Session rescheduled correctly",
   
   "CURRENT": "Current",
   "CURRENT_PASSWORD": "Current password",

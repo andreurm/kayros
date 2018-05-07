@@ -61,6 +61,7 @@
   "DO_SESSION": "Hacer sesión ahora",
   "NO_SESSION": "Hoy no tienes ninguna sesión que hacer",
   "RESCHEDULE_SESSION": "Reprogramar sesión ",
+  "START_TIME_RESCHEDULE_SESSION": "¿A que hora vas ha hacer la sesión?",
 
   "DO_YOUR_SESSION": "Haz tu sesión",
   "HOW_HAVE_YOU_FELT": "¿Cómo te has sentido desde la última sesión?",
@@ -98,6 +99,11 @@
   "RESTART_PROGRAM":"Reiniciar programa",
   "INSTRUCCIONS":"Instrucciones",
   "SET_TIME_FOR_REMINDER":"Establecer tiempo de recordatorio",
+  "SETUP_ERROR": "No ha sido posible iniciar tu tratamiento. Por favor inténtalo de nuevo.",
+  "SETUP_SUCCESS": "Tratamiento iniciado correctamente.",
+
+"RESTART_PROGRAM_ERROR":"El programa no se ha podido reiniciar.",
+"RESTART_PROGRAM_SUCCESS":"Programa reinciado correctamente.",
 
 
   "SETUP":"Configuración",
@@ -110,7 +116,9 @@
   "ADD_ONE_SESSION": "Añadir una sesión",
   "ADD_SEVERAL_SESSIONS": "Añadir varias sesiones",
   "ADD_SESSION_ERROR": "No ha sido posible añadir la sesión",
+  "ADD_SESSION_SUCCESS": "Sesión añadida correctamente",
   "ADD_SESSIONS_ERROR": "No ha sido posible añadir las sesiones",
+  "ADD_SESSIONS_SUCCESS": "Sesiones añadidas correctamente",
 
   "RESCHEDULE_SESSION_FOR":"Reprogama tu sesión por:",
   "NOW":"Ahora",
@@ -119,6 +127,7 @@
   "DAY_AFTER_DIFFERENT_TIME":"El día después a hora distinta",
 
   "RESCHEDULE_SESSION_ERROR": "No ha sido posible reprogramar la sesión",
+  "RESCHEDULE_SESSION_SUCCESS": "Sesión reprogramada correctamente",
   
   "CURRENT": "Actual",
   "CURRENT_PASSWORD": "Contraseña actual",

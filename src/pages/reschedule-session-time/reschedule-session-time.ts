@@ -2,20 +2,19 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import * as moment from 'moment';
 
 import { CalendarSessions } from '../../providers/providers';
 
-import {
-  CalendarSession
-} from '../../models/calendar-session';
-
 @IonicPage()
 @Component({
-  selector: 'page-reschedule-session',
-  templateUrl: 'reschedule-session.html'
+  selector: 'page-reschedule-session-time',
+  templateUrl: 'reschedule-session-time.html'
 })
-export class RescheduleSessionPage {
+export class RescheduleSessionTimePage {
+  formgroup: FormGroup;
+  rescheduleSessionTimeTimeStart: AbstractControl;
   loader = this.loadingCtrl.create({
     content: "",
   });
@@ -25,14 +24,13 @@ export class RescheduleSessionPage {
   private RescheduleSessionTimeSuccessString: string;
 
   calendarSession: any;
-
-
   constructor(
     public navCtrl: NavController,
     navParams: NavParams,
     public calendarSessions: CalendarSessions,
     public toastCtrl: ToastController,
     public translateService: TranslateService,
+    public formbuider: FormBuilder,
     public loadingCtrl: LoadingController) {
     this.calendarSession = navParams.get('calendarSession') || null;
     this.translateService.get('RESCHEDULE_SESSION_ERROR').subscribe((value) => {
@@ -41,28 +39,18 @@ export class RescheduleSessionPage {
     this.translateService.get('RESCHEDULE_SESSION_SUCCESS').subscribe((value) => {
       this.RescheduleSessionTimeSuccessString = value;
     })
+    this.formgroup = formbuider.group({
+      rescheduleSessionTimeTimeStart: ['', Validators.required]
+    });
 
+    this.rescheduleSessionTimeTimeStart = this.formgroup.controls['rescheduleSessionTimeTimeStart'];
   }
 
-  doNow(calendarSession: CalendarSession) {
-    this.navCtrl.push('DoSessionPage', {
-      calendarSession: calendarSession
-    });
-  }
-  rescheduleSessionOtherTime(calendarSession: CalendarSession) {
-    this.navCtrl.push('RescheduleSessionTimePage', {
-      calendarSession: calendarSession
-    });
-  }
-  rescheduleAfterDayDiferentTime(calendarSession: CalendarSession) {
-    this.navCtrl.push('RescheduleSessionTimePlusDayPage', {
-      calendarSession: calendarSession
-    });
-  }
-  rescheduleAfterDaySameTime(calendarSession: CalendarSession) {
+  // Attempt to login in through our User service
+  rescheduleSessionTime() {
     this.loader.present();
     let original_date = moment(this.calendarSession.day).format('YYYY-MM-DD');
-    this.calendarSession.day = moment(moment(original_date).add(1, 'day')).format('YYYY-MM-DD') + ' ' + moment(this.calendarSession.day).format('HH:mm');
+    this.calendarSession.day = moment(moment(original_date)).format('YYYY-MM-DD') + ' ' + this.rescheduleSessionTimeTimeStart.value;
     this.calendarSessions.rescheduleSession(this.calendarSession).subscribe((resp) => {
       this.loader.dismiss();
       this.navCtrl.setRoot('CalendarPage');
@@ -83,5 +71,4 @@ export class RescheduleSessionPage {
       toast.present();
     });
   }
-
 }

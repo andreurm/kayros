@@ -42,11 +42,12 @@ export class ChangePasswordPage {
 
   // Attempt to login in through our User service
   changePass() {
-    let json={
-      pass:this.password.value
+    let json = {
+      password: this.password.value,
+      old_password: this.old_password.value
     };
     this.user.changePass(json).subscribe((resp) => {
-      this.navCtrl.parent.parent.setRoot('ProfilePage');
+      this.navCtrl.setRoot('ProfilePage');
     }, (err) => {
       // Unable to log in
       let toast = this.toastCtrl.create({
