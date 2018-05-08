@@ -63,7 +63,6 @@ export class TimeReminderPage {
       toast.present();
     }, (err) => {
       this.loader.dismiss();
-      // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.setTimeReminderErrorString,
         duration: 3000,
