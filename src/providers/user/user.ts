@@ -55,7 +55,7 @@ export class User {
    * the user entered on the form.
    */
   forgot(accountInfo: any) {
-    let seq = this.api.post('users/forgot', accountInfo).share();
+    let seq = this.api.post('users/forgot.json', accountInfo).share();
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
