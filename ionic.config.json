@@ -1,6 +1,6 @@
 {
   "name": "kayros",
-  "app_id": "",
+  "app_id": "hola",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
