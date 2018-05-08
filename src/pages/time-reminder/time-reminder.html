@@ -7,9 +7,27 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item (click)="setReminderTime()">            
-      <h2>{{ 'TIME_REMINDER' | translate }}</h2>
-    </button>
-  </ion-list>
+
+
+  <form [formGroup]="formgroup" #setTimeReminderForm="ngForm" (submit)="sendTimeReminder()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>{{ 'TIME_REMINDER' | translate }}</ion-label>
+
+        <ion-select [(ngModel)]="user.kind" name="kind" formControlName="kind" placeholder="{{ 'SELECT' | translate }}">
+          <ion-option value="{{userKindsNotificationsStates.K30M}}">{{ 'KIND_30M' | translate }}</ion-option>
+          <ion-option value="{{userKindsNotificationsStates.K1H}}">{{ 'KIND_1H' | translate }}</ion-option>
+          <ion-option value="{{userKindsNotificationsStates.K4H}}">{{ 'KIND_4H' | translate }}</ion-option>
+          <ion-option value="{{userKindsNotificationsStates.K10H}}">{{ 'KIND_10H' | translate }}</ion-option>
+          <ion-option value="{{userKindsNotificationsStates.K20H}}">{{ 'KIND_20H' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <div padding>
+        <button type="submit" [disabled]="setTimeReminderForm.form.invalid" text-capitalize ion-button outline color="primary">
+          {{ 'CONTINUE' | translate }}
+        </button>
+      </div>
+
+    </ion-list>
+  </form>
 </ion-content>

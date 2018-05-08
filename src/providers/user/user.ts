@@ -116,13 +116,27 @@ export class User {
     return seq;
   }
 
+  setTimeForReminder(json: any) {
+    let seq = this.api.post('users/setTimeForReminder.json', json).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+      } else {
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+
+  }
   setup(json: any) {
     let seq = this.api.post('users/setup.json', json).share();
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
-        this._loggedIn(res);
       } else {
       }
     }, err => {

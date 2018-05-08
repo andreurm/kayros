@@ -62,6 +62,9 @@ export class ProfilePage {
     });
   }
 
+  public goSetup() {
+    this.navCtrl.push('SetupPage');
+  }
   public goHistory() {
     this.navCtrl.push('HistoryPage');
   }

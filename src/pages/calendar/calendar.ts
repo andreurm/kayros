@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, MenuController, Platform } from 'ionic-angular';
 import * as moment from 'moment';
-import { Observable } from 'rxjs/Rx';
 
 import {
   CalendarSession,

@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-import * as moment from 'moment';
-import { Observable } from 'rxjs/Rx';
 
 import {
-  CalendarSession,
-  CALENDAR_SESSION_STATE_MISSED
+  CalendarSession
 } from '../../models/calendar-session';
 import { CalendarSessions } from '../../providers/providers';
 

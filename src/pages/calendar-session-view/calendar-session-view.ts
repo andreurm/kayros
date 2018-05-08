@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import * as moment from 'moment';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import {
-  CalendarSession,
-  CALENDAR_SESSION_STATE_MISSED
-} from '../../models/calendar-session';
 import { CalendarSessions } from '../../providers/providers';
 
 
