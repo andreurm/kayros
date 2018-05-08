@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 import { User } from '../../providers/providers';
 
@@ -16,6 +18,9 @@ export class ForgotPage {
   account: { email: string} = {
     email: ''
   };
+  loader = this.loadingCtrl.create({
+    content: "",
+  });
 
   // Our translated text strings
   private forgotErrorString: string;
@@ -24,7 +29,8 @@ export class ForgotPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    public loadingCtrl: LoadingController) {
 
     this.translateService.get(["FORGOT_ERROR",
     "FORGOT_SUCCESS"]).subscribe((values) => {

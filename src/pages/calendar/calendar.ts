@@ -71,7 +71,6 @@ export class CalendarPage {
     }, (err) => {
     });
   }
-
   private isTodayCalendarSession(item: CalendarSession) {
     let today = new Date();
     let ret = false;

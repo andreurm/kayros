@@ -55,12 +55,11 @@ export class User {
    * the user entered on the form.
    */
   forgot(accountInfo: any) {
-    let seq = this.api.post('forgot', accountInfo).share();
+    let seq = this.api.post('users/forgot', accountInfo).share();
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
-        this._loggedIn(res);
       } else {
       }
     }, err => {
@@ -80,7 +79,6 @@ export class User {
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
-        this._loggedIn(res);
       }
     }, err => {
       console.error('ERROR', err);
@@ -138,7 +136,18 @@ export class User {
    * Log the user out, which forgets the session
    */
   logout() {
-    this._user = null;
+    let seq = this.api.post('users/oAuthLogout.json', null).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        this._user = null;
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
   }
 
   /**

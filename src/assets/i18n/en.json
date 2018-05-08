@@ -47,6 +47,8 @@
   "FORGOT_ERROR": "The email doesn't match any user",
   "FORGOT_SUCCESS": "We have sent an email with password reset instructions to your address",
   "CHANGE_PASS_ERROR": "Unable to change password. Please try again.",
+  "LOGOUT_ERROR":"Unable to logout.",
+  "LOGOUT_SUCCESS":"Logout.",
 
   "LIST_MASTER_TITLE": "Items",
 

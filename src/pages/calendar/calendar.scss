@@ -22,7 +22,7 @@ page-calendar {
         color: #fff !important;
     }
     td[_ngcontent-c1] div.calendar-state-1{
-        background-color: $notification-worst-color;
+        background-color: $notification-better-color;
         color: #fff !important;
     }
     td[_ngcontent-c1] div.calendar-state-4{
@@ -30,7 +30,7 @@ page-calendar {
         color: #fff !important;
     }
     td[_ngcontent-c1] div.calendar-state-2{
-        background-color: $notification-better-color;
+        background-color: $notification-worst-color;
         color: #fff !important;
     }
     td[_ngcontent-c1] div.calendar-state-5{
@@ -52,7 +52,7 @@ page-calendar {
         color:#000 !important;
     }
     td[_ngcontent-c1] div.calendar-reprogram.calendar-state-1{
-        border:3px solid $notification-worst-color;
+        border:3px solid $notification-better-color;
         background-color: #fff;
         color:#000 !important;
     }
@@ -62,7 +62,7 @@ page-calendar {
         color:#000 !important;
     }
     td[_ngcontent-c1] div.calendar-reprogram.calendar-state-2{
-        border:3px solid $notification-better-color;
+        border:3px solid $notification-worst-color;
         background-color: #fff;
         color:#000 !important;
     }

@@ -4,6 +4,7 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { Settings } from '../../providers/providers';
 import { LoadingController } from 'ionic-angular';
 import { User } from '../../providers/providers';
+import { FirstRunPage } from '../pages';
 
 @IonicPage()
 @Component({
@@ -13,6 +14,8 @@ import { User } from '../../providers/providers';
 export class ProfilePage {
   private RestartProgramErrorString: string;
   private RestartProgramSuccessString: string;
+  private LogoutErrorString: string;
+  private LogoutSuccessString: string;
   is_started_by_user: boolean;
   constructor(
     public navCtrl: NavController,
@@ -23,10 +26,12 @@ export class ProfilePage {
     public loadingCtrl: LoadingController) {
 
 
-    this.translateService.get(['RESTART_PROGRAM_ERROR', 'RESTART_PROGRAM_SUCCESS']).subscribe((value) => {
+    this.translateService.get(['RESTART_PROGRAM_ERROR', 'RESTART_PROGRAM_SUCCESS', 'LOGOUT_ERROR', 'LOGOUT_SUCCESS']).subscribe((value) => {
       this.RestartProgramErrorString = value.RESTART_PROGRAM_ERROR,
-        this.RestartProgramSuccessString = value.RESTART_PROGRAM_SUCCESS
-    })
+        this.RestartProgramSuccessString = value.RESTART_PROGRAM_SUCCESS,
+        this.LogoutErrorString = value.LOGOUT_ERROR,
+        this.LogoutSuccessString = value.LOGOUT_SUCCESS
+    });
     this.settings.getValue('is_started_by_user').then(val => {
       this.is_started_by_user = val;
     });
@@ -71,6 +76,28 @@ export class ProfilePage {
 
   public goChangePassword() {
     this.navCtrl.push('ChangePasswordPage');
+  }
+
+  public logout() {
+    this.user.logout().subscribe((resp) => {
+      this.loader.dismiss();
+      this.navCtrl.setRoot(FirstRunPage);
+      let toast = this.toastCtrl.create({
+        message: this.LogoutSuccessString,
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    }, (err) => {
+      this.loader.dismiss();
+      // Unable to log in
+      let toast = this.toastCtrl.create({
+        message: this.LogoutErrorString,
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    });
   }
 
 }

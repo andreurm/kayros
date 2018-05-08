@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar  color="primary">
+  <ion-navbar color="primary">
     <ion-title>{{ 'RESCHEDULE_SESSION' | translate }}</ion-title>
   </ion-navbar>
 
@@ -10,20 +10,20 @@
   <p padding-horizontal>{{calendarSession.formatDateTime()}}</p>
   <p padding-horizontal>{{ 'RESCHEDULE_SESSION_FOR' | translate }}</p>
   <ion-list>
-    <button ion-item (click)="doNow(calendarSession)">            
+    <button ion-item (click)="doNow(calendarSession)">
       <h2>{{ 'NOW' | translate }}</h2>
     </button>
-    <button ion-item (click)="rescheduleSessionOtherTime(calendarSession)">            
+    <button ion-item (click)="rescheduleSessionOtherTime(calendarSession)">
       <h2>{{ 'SAME_DAY_DIFFERENT_TIME' | translate }}</h2>
     </button>
   </ion-list>
 
   <ion-list>
-      <button ion-item (click)="rescheduleAfterDaySameTime(calendarSession)">            
-        <h2>{{ 'DAY_AFTER_SAME_TIME' | translate }}</h2>
-      </button>
-    <button ion-item (click)="rescheduleAfterDayDiferentTime(calendarSession)">            
-        <h2>{{ 'DAY_AFTER_DIFFERENT_TIME' | translate }}</h2>
-      </button>
+    <button *ngIf="calendarSession.can_reprogram_next_day" ion-item (click)="rescheduleAfterDaySameTime(calendarSession)">
+      <h2>{{ 'DAY_AFTER_SAME_TIME' | translate }}</h2>
+    </button>
+    <button *ngIf="calendarSession.can_reprogram_next_day" ion-item (click)="rescheduleAfterDayDiferentTime(calendarSession)">
+      <h2>{{ 'DAY_AFTER_DIFFERENT_TIME' | translate }}</h2>
+    </button>
   </ion-list>
 </ion-content>

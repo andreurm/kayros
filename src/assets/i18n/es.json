@@ -47,6 +47,8 @@
   "FORGOT_ERROR": "El email indicado no corresponde a ningún usuario",
   "FORGOT_SUCCESS": "Hemos enviado un email con instrucciones a la dirección indicada",
   "CHANGE_PASS_ERROR": "No ha sido posible modificar la contraseña. Por favor inténtalo de nuevo.",
+  "LOGOUT_ERROR":"No ha sido posible hacer el logout.",
+  "LOGOUT_SUCCESS":"Sesión cerrada correctamente.",
 
   "LIST_MASTER_TITLE": "Items",
 
