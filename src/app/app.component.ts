@@ -11,7 +11,7 @@ import { Settings } from '../providers/providers';
   template: `<ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage: any=FirstRunPage;
+  rootPage: any;
 
   show_tutorial: boolean = true;
   @ViewChild(Nav) nav: Nav;
@@ -30,6 +30,8 @@ export class MyApp {
       } else {
         this.rootPage = "LoginPage";
       }
+    }).catch(err => {
+      this.rootPage = FirstRunPage;
     });
   }
 
