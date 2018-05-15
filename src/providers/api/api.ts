@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
   //url: string = 'http://localhost/projects/kayros/web/publish';
-  url: string = 'http://www.andreurm.cat/kayrosws';
+  url: string = 'http://www.andreurm.cat/kayros';
   access_token: string;
   constructor(public http: HttpClient) {
   }
