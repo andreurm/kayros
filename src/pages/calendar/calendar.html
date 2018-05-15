@@ -39,7 +39,7 @@
     <br/>
     <button ion-button block outline color="primary" (click)="rescheduleSession(todaySession)">{{ 'RESCHEDULE_SESSION' | translate }}</button>
   </div>
-  <ion-list *ngIf="!todaySession && nextSession">
+  <ion-list *ngIf="!todaySession && nextSession && (nextSession.can_reprogram_now || nextSession.can_reprogram_next_day)">
     <button ion-item (click)="rescheduleSession(nextSession)">
       <h2>{{ 'RESCHEDULE_NEXT_SESSION' | translate }}</h2>
       <p>{{nextSession.formatDateTime()}}</p>

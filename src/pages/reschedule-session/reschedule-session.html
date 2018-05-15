@@ -10,10 +10,10 @@
   <p padding-horizontal>{{calendarSession.formatDateTime()}}</p>
   <p padding-horizontal>{{ 'RESCHEDULE_SESSION_FOR' | translate }}</p>
   <ion-list>
-    <button ion-item (click)="doNow(calendarSession)">
+    <button *ngIf="calendarSession.can_reprogram_now" ion-item (click)="doNow(calendarSession)">
       <h2>{{ 'NOW' | translate }}</h2>
     </button>
-    <button ion-item (click)="rescheduleSessionOtherTime(calendarSession)">
+    <button *ngIf="calendarSession.can_reprogram_now" ion-item (click)="rescheduleSessionOtherTime(calendarSession)">
       <h2>{{ 'SAME_DAY_DIFFERENT_TIME' | translate }}</h2>
     </button>
   </ion-list>

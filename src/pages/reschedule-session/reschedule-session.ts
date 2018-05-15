@@ -42,6 +42,8 @@ export class RescheduleSessionPage {
   }
 
   doNow(calendarSession: CalendarSession) {
+    calendarSession.date=moment().format('YYYY-MM-DD');
+    calendarSession.reprogram=1;
     this.navCtrl.push('DoSessionPage', {
       calendarSession: calendarSession
     });

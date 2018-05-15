@@ -39,7 +39,6 @@ export class CalendarPage {
     }
     this.fetchCalendarSessions();
     this.settings.getValue('is_started_by_user').then(val => {
-      console.log(val);
       this.is_started_by_user = val;
     });
   }
