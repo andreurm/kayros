@@ -11,7 +11,7 @@ import { Settings } from '../providers/providers';
   template: `<ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage: any;
+  rootPage: any="LoginPage";
 
   show_tutorial: boolean = true;
   @ViewChild(Nav) nav: Nav;
