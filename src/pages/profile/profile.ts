@@ -36,13 +36,13 @@ export class ProfilePage {
       this.is_started_by_user = val;
     });
   }
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
   public restartProgram() {
-    this.loader.present();
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
+    loader.present();
     this.user.restartProgram().subscribe((resp) => {
-      this.loader.dismiss();
+      loader.dismiss();
       this.navCtrl.setRoot('CalendarPage');
       let toast = this.toastCtrl.create({
         message: this.RestartProgramSuccessString,
@@ -51,7 +51,7 @@ export class ProfilePage {
       });
       toast.present();
     }, (err) => {
-      this.loader.dismiss();
+      loader.dismiss();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.RestartProgramErrorString,
@@ -70,7 +70,7 @@ export class ProfilePage {
   }
 
   public goInstructionsProfile() {
-    this.navCtrl.push('InstructionsProfilePage');
+    this.navCtrl.parent.parent.setRoot('InstructionsProfilePage');
   }
 
   public goTimeReminder() {
@@ -82,9 +82,12 @@ export class ProfilePage {
   }
 
   public logout() {
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
     this.user.logout().subscribe((resp) => {
-      this.loader.dismiss();
-      this.navCtrl.setRoot(FirstRunPage);
+      loader.dismiss();
+      this.navCtrl.parent.parent.setRoot(FirstRunPage);
       let toast = this.toastCtrl.create({
         message: this.LogoutSuccessString,
         duration: 3000,
@@ -92,7 +95,7 @@ export class ProfilePage {
       });
       toast.present();
     }, (err) => {
-      this.loader.dismiss();
+      loader.dismiss();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.LogoutErrorString,

@@ -20,9 +20,6 @@ export class LoginPage {
     email: '',
     password: ''
   };
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
 
   // Our translated text strings
   private loginErrorString: string;
@@ -49,12 +46,21 @@ export class LoginPage {
   }
   // Attempt to login in through our User service
   doLogin() {
-    this.loader.present();
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
+    loader.present();
     this.user.login(this.account).subscribe((resp) => {
-      this.loader.dismiss();
-      this.navCtrl.push(MainPage);
+      loader.dismiss();
       this.settings.setValue('is_started_by_user', resp['success']['is_started_by_user']);
+
+      if (resp['success']['is_started_by_user']) {
+        this.navCtrl.setRoot(MainPage);
+      } else {
+        this.navCtrl.setRoot("SetupPage");
+      }
     }, (err) => {
+      loader.dismiss();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
@@ -62,15 +68,11 @@ export class LoginPage {
         position: 'top'
       });
       toast.present();
-      this.loader.dismiss();
     });
   }
 
 
   forgot() {
-    this.navCtrl.push('ForgotPage', {}, {
-      animate: true,
-      direction: 'forward'
-    });
+    this.navCtrl.push('ForgotPage');
   }
 }

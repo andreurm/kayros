@@ -21,9 +21,6 @@ import {
   templateUrl: 'do-session.html'
 })
 export class DoSessionPage {
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
   formgroup: FormGroup;
   state: AbstractControl;
   text: AbstractControl;
@@ -63,12 +60,15 @@ export class DoSessionPage {
 
   // Attempt to login in through our User service
   sendSessionResult() {
-    this.loader.present();
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
+    loader.present();
     this.calendarSessions.save(this.calendarSession).subscribe((resp) => {
-      this.loader.dismiss();
+      loader.dismiss();
       this.navCtrl.setRoot('CalendarPage');
     }, (err) => {
-      this.loader.dismiss();
+      loader.dismiss();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.doSessionErrorString,

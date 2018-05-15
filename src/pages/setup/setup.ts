@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { User } from '../../providers/providers';
 import { Settings } from '../../providers/providers';
 import * as moment from 'moment';
+import { MainPage } from '../pages';
 
 @IonicPage()
 @Component({
@@ -18,9 +19,6 @@ export class SetupPage {
   formgroup: FormGroup;
   setupDateStart: AbstractControl;
   setupTimeStart: AbstractControl;
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
 
   // Our translated text strings
   private SetupErrorString: string;
@@ -50,15 +48,18 @@ export class SetupPage {
 
   // Attempt to login in through our User service
   doSetup() {
-    this.loader.present();
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
+    loader.present();
     let json = {
       day: this.setupDateStart.value,
       time: this.setupTimeStart.value
     };
     this.user.setup(json).subscribe((resp) => {
       this.settings.setValue('is_started_by_user', true);
-      this.loader.dismiss();
-      this.navCtrl.setRoot('ProfilePage');
+      loader.dismiss();
+      this.navCtrl.setRoot(MainPage);
       let toast = this.toastCtrl.create({
         message: this.SetupSuccessString,
         duration: 3000,
@@ -66,7 +67,7 @@ export class SetupPage {
       });
       toast.present();
     }, (err) => {
-      this.loader.dismiss();
+      loader.dismiss();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.SetupErrorString,

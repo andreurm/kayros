@@ -14,12 +14,9 @@ export class ForgotPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { email: string} = {
+  account: { email: string } = {
     email: ''
   };
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
 
   // Our translated text strings
   private forgotErrorString: string;
@@ -31,8 +28,7 @@ export class ForgotPage {
     public translateService: TranslateService,
     public loadingCtrl: LoadingController) {
 
-    this.translateService.get(["FORGOT_ERROR",
-    "FORGOT_SUCCESS"]).subscribe((values) => {
+    this.translateService.get(["FORGOT_ERROR", "FORGOT_SUCCESS"]).subscribe((values) => {
       this.forgotErrorString = values.FORGOT_ERROR;
       this.forgotSuccessString = values.FORGOT_SUCCESS;
     })
@@ -48,7 +44,7 @@ export class ForgotPage {
         position: 'top'
       });
       toast.present();
-    }, (err) => {     
+    }, (err) => {
       // Unable to forgot
       let toast = this.toastCtrl.create({
         message: this.forgotErrorString,
@@ -59,7 +55,7 @@ export class ForgotPage {
     });
   }
 
-  backToLogin(){
+  backToLogin() {
     this.navCtrl.pop();
   }
 }

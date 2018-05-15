@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
 
 import { TranslateService } from '@ngx-translate/core';
+import { MainPage } from '../pages';
 
 export interface Slide {
   description: string;
@@ -28,7 +29,6 @@ export class InstructionsProfilePage {
       "INSTRUCTIONS_PROFILE_SLIDE5_DESCRIPTION",
     ]).subscribe(
       (values) => {
-        console.log('Loaded values', values);
         this.slides = [
           {            
             description: values.INSTRUCTIONS_PROFILE_SLIDE1_DESCRIPTION,
@@ -55,7 +55,7 @@ export class InstructionsProfilePage {
   }
 
   goProfile() {
-    this.navCtrl.setRoot('ProfilePage', {}, {
+    this.navCtrl.setRoot(MainPage, {}, {
       animate: true,
       direction: 'forward'
     });

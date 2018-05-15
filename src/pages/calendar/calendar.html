@@ -13,7 +13,13 @@
 
 <ion-content>
 
-  <ng-template #template let-view="view" let-row="row" let-col="col">
+  <div *ngIf="!is_started_by_user" text-center>
+    <p>Aún no has configurado tu programa</p>
+    <button ion-item (click)="goSetup()">
+      <h2>{{ 'SETUP_YOUR_PROGRAM' | translate }}</h2>
+    </button>
+  </div>
+  <ng-template  #template let-view="view" let-row="row" let-col="col">
     <div *ngIf="view.dates[row*7+col].events[0]" class="calendar-state-{{view.dates[row*7+col].events[0].state}}" [ngClass]="{'calendar-manual': view.dates[row*7+col].events[0].manual, 'calendar-reprogram': view.dates[row*7+col].events[0].reprogram}">
       <span>{{view.dates[row*7+col].label}}</span>
     </div>
@@ -22,9 +28,10 @@
       <span>{{view.dates[row*7+col].label}}</span>
     </div>
   </ng-template>
-  <calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate" (onEventSelected)="onEventSelected($event)"
-    (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event)" [markDisabled]="markDisabled" [monthviewDisplayEventTemplate]="template"
-    [locale]="calendar.locale" autoSelect=false step="30" class="calendar">
+  <calendar  [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate"
+    (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event)"
+    [markDisabled]="markDisabled" [monthviewDisplayEventTemplate]="template" [locale]="calendar.locale" autoSelect=false step="30"
+    class="calendar">
   </calendar>
 
   <div padding text-center class="forgot-pass" *ngIf="todaySession">

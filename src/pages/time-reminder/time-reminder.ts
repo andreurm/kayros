@@ -12,9 +12,6 @@ import { User } from '../../providers/providers';
   templateUrl: 'time-reminder.html'
 })
 export class TimeReminderPage {
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
   formgroup: FormGroup;
   kind: AbstractControl;
   userKindsNotificationsStates: any = {
@@ -35,7 +32,8 @@ export class TimeReminderPage {
     public translateService: TranslateService,
     public formbuider: FormBuilder,
     public loadingCtrl: LoadingController) {
-    this.translateService.get(['SET_TIME_REMINDER_ERROR'], ['SET_TIME_REMINDER_SUCCESS']).subscribe((value) => {
+
+    this.translateService.get(['SET_TIME_REMINDER_ERROR','SET_TIME_REMINDER_SUCCESS']).subscribe((value) => {
       this.setTimeReminderErrorString = value.SET_TIME_REMINDER_ERROR;
       this.setTimeReminderSuccessString = value.SET_TIME_REMINDER_SUCCESS;
     })
@@ -48,12 +46,15 @@ export class TimeReminderPage {
 
   // Attempt to login in through our User service
   sendTimeReminder() {
-    this.loader.present();
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
+    loader.present();
     let json = {
       kind: this.kind.value
     }
     this.user.setTimeForReminder(json).subscribe((resp) => {
-      this.loader.dismiss();
+      loader.dismiss();
       this.navCtrl.setRoot('ProfilePage');
       let toast = this.toastCtrl.create({
         message: this.setTimeReminderSuccessString,
@@ -62,7 +63,7 @@ export class TimeReminderPage {
       });
       toast.present();
     }, (err) => {
-      this.loader.dismiss();
+      loader.dismiss();
       let toast = this.toastCtrl.create({
         message: this.setTimeReminderErrorString,
         duration: 3000,

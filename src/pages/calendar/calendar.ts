@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, MenuController, Platform } from 'ionic-angular';
 import * as moment from 'moment';
+import { Settings } from '../../providers/providers';
 
 import {
   CalendarSession,
@@ -20,7 +21,7 @@ export class CalendarPage {
   viewTitle: string;
   selectedDay = new Date();
   currentCalendarSessions: CalendarSession[];
-
+  is_started_by_user: boolean;
   calendar = {
     mode: 'month',
     currentDate: new Date(),
@@ -30,12 +31,17 @@ export class CalendarPage {
   todaySession: CalendarSession;
   nextSession: CalendarSession;
 
-  constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions, public menu: MenuController, public translate: TranslateService, public platform: Platform) {
+  constructor(public navCtrl: NavController, public calendarSessions: CalendarSessions,
+    public settings: Settings, public menu: MenuController, public translate: TranslateService, public platform: Platform) {
 
     if (this.translate.getBrowserLang() == "es") {
       this.calendar.locale = "es-ES";
     }
     this.fetchCalendarSessions();
+    this.settings.getValue('is_started_by_user').then(val => {
+      console.log(val);
+      this.is_started_by_user = val;
+    });
   }
 
   private fetchCalendarSessions(): void {
@@ -69,6 +75,10 @@ export class CalendarPage {
       });
     }, (err) => {
     });
+  }
+
+  public goSetup() {
+    this.navCtrl.push('SetupPage');
   }
   private isTodayCalendarSession(item: CalendarSession) {
     let today = new Date();

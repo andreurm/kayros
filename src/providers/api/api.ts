@@ -20,7 +20,6 @@ export class Api {
   loginOauth(accountInfo) {
 
     let seq = this.post('users/oAuthLogin.json', accountInfo).share();
-
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.success) {

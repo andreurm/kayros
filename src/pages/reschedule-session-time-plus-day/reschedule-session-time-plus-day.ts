@@ -15,9 +15,6 @@ import { CalendarSessions } from '../../providers/providers';
 export class RescheduleSessionTimePlusDayPage {
   formgroup: FormGroup;
   rescheduleSessionTimePlusDayTimeStart: AbstractControl;
-  loader = this.loadingCtrl.create({
-    content: "",
-  });
 
   // Our translated text strings
   private RescheduleSessionTimeErrorString: string;
@@ -46,11 +43,14 @@ export class RescheduleSessionTimePlusDayPage {
     this.rescheduleSessionTimePlusDayTimeStart = this.formgroup.controls['rescheduleSessionTimePlusDayTimeStart'];
   }
   rescheduleSessionTimePlusDay() {
-    this.loader.present();
+    let loader = this.loadingCtrl.create({
+      content: "",
+    });
+    loader.present();
     let original_date = moment(this.calendarSession.day).format('YYYY-MM-DD');
     this.calendarSession.day = moment(moment(original_date).add(1, 'day')).format('YYYY-MM-DD') + ' ' + this.rescheduleSessionTimePlusDayTimeStart.value;
     this.calendarSessions.rescheduleSession(this.calendarSession).subscribe((resp) => {
-      this.loader.dismiss();
+      loader.dismiss();
       this.navCtrl.setRoot('CalendarPage');
       let toast = this.toastCtrl.create({
         message: this.RescheduleSessionTimeSuccessString,
@@ -59,7 +59,7 @@ export class RescheduleSessionTimePlusDayPage {
       });
       toast.present();
     }, (err) => {
-      this.loader.dismiss();
+      loader.dismiss();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.RescheduleSessionTimeErrorString,

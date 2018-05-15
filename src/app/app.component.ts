@@ -27,8 +27,9 @@ import { Settings } from '../providers/providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  rootPage: any;
 
+  show_tutorial: boolean = true;
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
@@ -45,7 +46,7 @@ export class MyApp {
     { title: 'Search', component: 'SearchPage' }
   ]
 
-  constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(private translate: TranslateService, platform: Platform, public settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -53,6 +54,13 @@ export class MyApp {
       this.splashScreen.hide();
     });
     this.initTranslate();
+    this.settings.getValue('show_tutorial').then(val => {
+      if (val) {
+        this.rootPage = FirstRunPage;
+      } else {
+        this.rootPage = "LoginPage";
+      }
+    });
   }
 
   initTranslate() {
