@@ -22,12 +22,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      alert('0');
     });
     this.initTranslate();
-    alert('1');
     this.settings.getValue('show_tutorial').then(val => {
-      alert('2');
       if (val) {
         this.rootPage = FirstRunPage;
       } else {
