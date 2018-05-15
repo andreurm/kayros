@@ -11,7 +11,7 @@ import { Settings } from '../providers/providers';
   template: `<ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage: any="LoginPage";
+  rootPage: any;
 
   show_tutorial: boolean = true;
   @ViewChild(Nav) nav: Nav;
@@ -24,7 +24,9 @@ export class MyApp {
       this.splashScreen.hide();
     });
     this.initTranslate();
+    alert('1');
     this.settings.getValue('show_tutorial').then(val => {
+      alert('2');
       if (val) {
         this.rootPage = FirstRunPage;
       } else {
